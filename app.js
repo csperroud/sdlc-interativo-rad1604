@@ -299,128 +299,152 @@ document.querySelectorAll('.compare-row').forEach(row => {
 });
 
 /* ══════════════════════════════════════════════════════════════════════
-   QUIZ DATA
+   QUIZ DATA — Foco no RAD
 ══════════════════════════════════════════════════════════════════════ */
 const QUIZ = [
   {
-    tag: 'SDLC',
-    question: 'O que significa a sigla SDLC?',
+    tag: 'RAD — Origem',
+    question: 'Quem criou o modelo RAD e em que ano foi publicado?',
     options: [
-      'Software Development Lifecycle',
-      'System Design and Logic Configuration',
-      'Software Deployment and Launch Control',
-      'Structured Data and Logic Cycle'
-    ],
-    correct: 0,
-    feedback: 'SDLC (Software Development Life Cycle) é o conjunto estruturado de fases que organiza a criação de sistemas de software, desde o planejamento até a manutenção.'
-  },
-  {
-    tag: 'Cascata',
-    question: 'Qual é a principal característica do Modelo Cascata?',
-    options: [
-      'Entregas incrementais a cada sprint',
-      'Fases sequenciais, onde cada fase deve ser concluída antes da próxima iniciar',
-      'Iterações rápidas com participação intensa do usuário',
-      'Ausência de documentação formal'
+      'Kent Beck, em 1999, como base do Extreme Programming',
+      'James Martin, em 1991, no livro "Rapid Application Development"',
+      'Barry Boehm, em 1986, como evolução do Modelo Espiral',
+      'Ken Schwaber, em 1995, junto com o framework Scrum'
     ],
     correct: 1,
-    feedback: 'O Cascata é linear e sequencial: cada fase (planejamento, análise, design…) deve ser formalmente concluída e aprovada antes de avançar. Isso o torna rígido, mas previsível.'
+    feedback: 'James Martin formalizou o RAD em 1991 no livro homônimo. Martin foi consultor de TI e percebeu que os projetos Cascata entregavam sistemas desatualizados — o RAD nasceu como resposta direta a essa limitação.'
   },
   {
-    tag: 'RAD',
-    question: 'O que são as sessões JAD no contexto do RAD?',
+    tag: 'RAD — Contexto histórico',
+    question: 'Qual era o principal problema dos projetos de software nos anos 1980 que motivou a criação do RAD?',
     options: [
-      'Reuniões diárias de 15 minutos para sincronização da equipe',
-      'Testes automatizados de aceitação do usuário',
-      'Workshops colaborativos onde usuários participam ativamente do design do sistema',
-      'Revisões formais de código entre desenvolvedores'
+      'A falta de linguagens de programação orientadas a objetos',
+      'O alto custo dos computadores pessoais',
+      'Projetos Cascata demoravam tanto que os sistemas entregues já estavam desatualizados',
+      'A ausência de banco de dados relacionais nos servidores'
     ],
     correct: 2,
-    feedback: 'JAD (Joint Application Design) são sessões facilitadas onde desenvolvedores e usuários colaboram diretamente na concepção do sistema, validando protótipos em tempo real. É uma das grandes inovações do RAD.'
+    feedback: 'Nos anos 1980, projetos Cascata típicos levavam 2 a 4 anos. Ao serem entregues, os requisitos de negócio já haviam mudado. Martin chamou isso de "the application backlog" — filas de projetos atrasados e sistemas obsoletos na entrega.'
   },
   {
-    tag: 'Ágil',
-    question: 'Por que o Ágil NÃO é uma metodologia de desenvolvimento?',
+    tag: 'RAD — Fase 1',
+    question: 'O que ocorre na fase de Planejamento de Requisitos do RAD?',
     options: [
-      'Porque é muito recente para ser considerado metodologia',
-      'Porque não possui documentação',
-      'Porque é um conjunto de valores e princípios — uma filosofia — não um processo prescritivo',
-      'Porque só funciona com times pequenos'
-    ],
-    correct: 2,
-    feedback: 'O Manifesto Ágil (2001) declara valores e princípios, não processos. Scrum, XP e Kanban são os frameworks que operacionalizam esses valores com papéis e cerimônias concretas.'
-  },
-  {
-    tag: 'Scrum',
-    question: 'Qual é o papel do Product Owner (PO) no Scrum?',
-    options: [
-      'Facilitar as cerimônias e remover impedimentos do time',
-      'Escrever código e realizar testes junto com o Dev Team',
-      'Representar o negócio, definir prioridades do backlog e maximizar o valor do produto',
-      'Gerenciar o cronograma e o orçamento do projeto'
-    ],
-    correct: 2,
-    feedback: 'O PO é o dono do Product Backlog — responsável por maximizar o valor do produto, priorizando histórias com base no retorno para o negócio. É a voz do cliente dentro do time.'
-  },
-  {
-    tag: 'Comparativo',
-    question: 'Em qual cenário o Modelo Cascata ainda é mais adequado?',
-    options: [
-      'Startups de tecnologia com produto inovador',
-      'Sistemas com requisitos muito voláteis e usuários ativos',
-      'Sistemas críticos com requisitos estáveis, como software de controle de voo',
-      'Desenvolvimento de aplicativos mobile com entregas frequentes'
-    ],
-    correct: 2,
-    feedback: 'O Cascata é ideal quando os requisitos são estáveis, bem definidos desde o início e o custo de mudança precisa ser mínimo — como em sistemas aeroespaciais, militares ou contratos governamentais regulados.'
-  },
-  {
-    tag: 'RAD',
-    question: 'O que é o "timebox" no modelo RAD?',
-    options: [
-      'Um relatório de tempo gasto por desenvolvedor',
-      'Um sprint de 2 semanas do Scrum adaptado para RAD',
-      'Um prazo fixo (60–90 dias) dentro do qual uma versão completa do sistema é entregue',
-      'Uma ferramenta de gerenciamento de backlog'
-    ],
-    correct: 2,
-    feedback: 'O timebox do RAD é uma janela de tempo fixa (tipicamente 60 a 90 dias) na qual o SWAT Team completa um ciclo design-construção e entrega uma versão funcional. Se o prazo acabar, escopo é cortado — o prazo nunca.'
-  },
-  {
-    tag: 'Scrum',
-    question: 'O que acontece na Retrospectiva do Scrum?',
-    options: [
-      'Demonstração do incremento entregue para os stakeholders',
-      'O time inspeciona seu próprio processo e define ações de melhoria para o próximo sprint',
-      'Planejamento das histórias para o próximo sprint',
-      'Revisão do Product Backlog com o Product Owner'
+      'A equipe codifica protótipos de alta fidelidade sem participação do usuário',
+      'Workshops JRP reúnem usuários, gerentes e desenvolvedores para definir escopo e prioridades por versão',
+      'O Scrum Master planeja os sprints do próximo trimestre',
+      'É produzido o documento ERS completo, como no Cascata'
     ],
     correct: 1,
-    feedback: 'A Retrospectiva é a cerimônia de melhoria contínua: o time reflete sobre pessoas, relações e ferramentas — não sobre o produto. O resultado é um conjunto de ações concretas para o próximo sprint.'
+    feedback: 'No Planejamento de Requisitos do RAD, sessões JRP (Joint Requirements Planning) reúnem todos os stakeholders em workshops intensivos. O objetivo não é especificar tudo, mas priorizar funções críticas e definir o escopo do timebox — diferente do Cascata, que exige especificação completa antes de avançar.'
   },
   {
-    tag: 'SDLC',
-    question: 'Qual foi o legado histórico do RAD para as metodologias ágeis?',
+    tag: 'RAD — JAD',
+    question: 'O que significa JAD e qual é seu papel no RAD?',
     options: [
-      'O RAD criou o Manifesto Ágil diretamente em 2001',
-      'O RAD introduziu conceitos como timeboxing, prototipação iterativa e envolvimento do usuário, que foram absorvidos pelo Ágil',
-      'O RAD substituiu o Ágil em grandes empresas',
-      'O RAD não teve influência sobre as metodologias ágeis'
+      'Java Application Design — linguagem usada para protótipos rápidos',
+      'Joint Application Design — sessões colaborativas onde usuários e desenvolvedores projetam o sistema juntos',
+      'Just-in-time Agile Development — técnica de entrega contínua',
+      'Joint Automated Deployment — automação de ambientes de teste'
     ],
     correct: 1,
-    feedback: 'O RAD (1991) foi uma ponte fundamental: introduziu o timeboxing, as iterações com usuário, os protótipos evolutivos e as equipes multifuncionais — todos conceitos que aparecem nos frameworks ágeis dos anos 2000.'
+    feedback: 'JAD (Joint Application Design) são sessões estruturadas facilitadas por um especialista onde usuários de negócio e desenvolvedores colaboram diretamente na concepção de telas, fluxos e regras. O usuário valida protótipos em tempo real — não ao final do projeto. Isso reduz drasticamente retrabalho por requisitos mal compreendidos.'
   },
   {
-    tag: 'Comparativo',
-    question: 'Qual é a principal diferença no custo de mudança entre Cascata e Ágil?',
+    tag: 'RAD — SWAT Team',
+    question: 'O que é um "SWAT Team" no contexto do RAD?',
     options: [
-      'No Cascata, mudanças são baratas pois a documentação é completa',
-      'No Ágil, mudanças são caras por envolver refatoração de código',
-      'No Cascata, mudanças tardias são caras pois exigem rever fases já concluídas; no Ágil, são esperadas e absorvidas no próximo sprint',
-      'Ambos têm o mesmo custo de mudança, dependendo apenas da equipe'
+      'Equipe de segurança responsável por auditar o código produzido',
+      'Time multifuncional altamente qualificado: desenvolvedores, usuários e especialistas trabalhando em conjunto no timebox',
+      'Grupo de testadores que valida o sistema antes da entrega',
+      'Comitê de gerentes que aprova as versões do sistema'
+    ],
+    correct: 1,
+    feedback: 'SWAT (Skilled Workers with Advanced Tools) é a equipe central do RAD: pequena (4 a 6 pessoas), multifuncional, com desenvolvedores experientes, usuários representantes e ferramentas CASE. O time permanece dedicado ao projeto pelo período do timebox, sem interrupções externas.'
+  },
+  {
+    tag: 'RAD — Timebox',
+    question: 'Qual é a regra fundamental do timebox no RAD?',
+    options: [
+      'O escopo é fixo e o prazo pode ser estendido se necessário',
+      'O prazo é fixo; se o tempo acabar, o escopo é reduzido — funcionalidades menos prioritárias ficam para a próxima versão',
+      'O orçamento é fixo, mas prazo e escopo podem variar',
+      'O timebox dura exatamente 2 semanas, igual ao sprint do Scrum'
+    ],
+    correct: 1,
+    feedback: 'No RAD, o timebox tem prazo fixo de 60 a 90 dias. Se o tempo esgotar antes de tudo estar pronto, as funcionalidades de menor prioridade são movidas para a próxima versão — nunca se estende o prazo. Essa regra força priorização constante e evita o "scope creep" clássico dos projetos Cascata.'
+  },
+  {
+    tag: 'RAD — Fase 2 e 3',
+    question: 'Como as fases de Design do Usuário e Construção se relacionam no RAD?',
+    options: [
+      'São fases independentes executadas em sequência, sem sobreposição',
+      'Ocorrem em paralelo e em ciclos: protótipos são construídos, apresentados ao usuário, refinados e reconstruídos iterativamente',
+      'Design é feito por consultores externos; Construção é feita pela equipe interna',
+      'Design ocorre uma única vez no início; Construção dura o restante do timebox'
+    ],
+    correct: 1,
+    feedback: 'No coração do RAD, Design e Construção são iterativos e paralelos. O SWAT Team constrói um protótipo, o usuário valida em sessão JAD, o feedback é incorporado imediatamente e um novo protótipo é gerado. Esse ciclo se repete até a aprovação — tornando o resultado muito mais alinhado às necessidades reais.'
+  },
+  {
+    tag: 'RAD — Ferramentas CASE',
+    question: 'Qual era o papel das ferramentas CASE no Modelo RAD original de James Martin?',
+    options: [
+      'Gerenciar sprints e o backlog de funcionalidades da equipe',
+      'Acelerar a geração de código a partir de modelos e protótipos, reduzindo o esforço manual de programação',
+      'Automatizar os testes de aceitação do usuário no final do timebox',
+      'Controlar o versionamento do código durante as iterações'
+    ],
+    correct: 1,
+    feedback: 'CASE (Computer-Aided Software Engineering) era um conjunto de ferramentas que geravam código automaticamente a partir de diagramas e modelos. Martin apostava nelas para viabilizar o timebox de 60 a 90 dias — sem a geração automática de código, a velocidade necessária seria impossível com as equipes da época.'
+  },
+  {
+    tag: 'RAD — Cutover',
+    question: 'O que distingue a fase Cutover do RAD da fase de Implantação do Cascata?',
+    options: [
+      'No RAD, o Cutover é mais longo pois exige documentação extensa antes do go-live',
+      'No RAD, o Cutover encerra apenas uma versão — o ciclo recomeça para V2, V3; no Cascata, a Implantação encerra o projeto',
+      'No Cascata, a Implantação ocorre sem treinamento de usuários; no RAD, o Cutover inclui treinamento intensivo',
+      'Não há distinção — ambas as fases são equivalentes nos dois modelos'
+    ],
+    correct: 1,
+    feedback: 'Essa é uma diferença estrutural fundamental: no Cascata, a Implantação marca o fim do projeto. No RAD, o Cutover encerra apenas uma versão (V1). Após a entrega, a equipe reinicia o timebox para V2, incorporando novos requisitos e feedback. O RAD é multiversion por natureza.'
+  },
+  {
+    tag: 'RAD — Limitações',
+    question: 'Qual é uma limitação reconhecida do Modelo RAD?',
+    options: [
+      'Não permite qualquer tipo de prototipação durante o desenvolvimento',
+      'Exige envolvimento intenso e disponibilidade constante do usuário — sem isso, o modelo colapsa',
+      'Só funciona com equipes de mais de 20 desenvolvedores',
+      'Proíbe o uso de ferramentas visuais ou IDEs modernas'
+    ],
+    correct: 1,
+    feedback: 'O RAD tem uma dependência crítica: o usuário precisa participar ativamente das sessões JAD e estar disponível para validar protótipos regularmente. Se o cliente não tiver tempo ou interesse, as iterações ficam sem feedback real e o timebox perde seu propósito. Projetos com clientes ausentes ou instáveis tendem a falhar com RAD.'
+  },
+  {
+    tag: 'RAD — Legado',
+    question: 'Qual conceito do RAD foi diretamente absorvido pelos frameworks ágeis modernos?',
+    options: [
+      'A geração automática de código por ferramentas CASE',
+      'A documentação extensa produzida antes do desenvolvimento',
+      'O timebox com entregas parciais, a prototipação iterativa e o envolvimento contínuo do usuário',
+      'A divisão do time em equipes separadas de design e construção'
     ],
     correct: 2,
-    feedback: 'No Cascata, cada fase gera artefatos aprovados — mudar um requisito pode invalidar design, código e testes. No Ágil, o backlog é dinâmico e mudanças são incorporadas naturalmente no próximo sprint.'
+    feedback: 'O legado do RAD para o Ágil é direto e reconhecido: o Scrum herdou o timebox (sprint), a entrega incremental por versões e o envolvimento do usuário (Product Owner). O Manifesto Ágil de 2001 foi assinado por profissionais que conheciam e praticavam RAD, XP e DSDM — todos inspirados no trabalho de Martin.'
+  },
+  {
+    tag: 'RAD vs. outros',
+    question: 'Por que o RAD é considerado uma "ponte" entre o Cascata e o Ágil?',
+    options: [
+      'Porque surgiu exatamente ao mesmo tempo que o Manifesto Ágil',
+      'Porque manteve a estrutura documental do Cascata e ignorou a participação do usuário',
+      'Porque introduziu iteratividade, prototipação e envolvimento do usuário sem abandonar completamente a estrutura de fases do Cascata',
+      'Porque é um framework certificado pela mesma organização que criou o Scrum'
+    ],
+    correct: 2,
+    feedback: 'O RAD ocupa um lugar único na história: manteve fases identificáveis (como o Cascata) mas as tornou iterativas e orientadas ao usuário (como o Ágil). Publicado em 1991, antecedeu o Manifesto Ágil em 10 anos e pavimentou conceitos fundamentais — prova de que a transição para o Ágil não foi uma ruptura, mas uma evolução gradual.'
   }
 ];
 
