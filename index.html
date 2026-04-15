@@ -568,39 +568,87 @@
     <div class="section-header">
       <div class="section-label">Para não-devs</div>
       <h2>Memes que seu amigo de TI manda</h2>
-      <p>As piadas do mundo do desenvolvimento — e o que elas realmente significam.</p>
+      <p>Para os seus amigos de TI não se sentirem tão sozinhos — e para você finalmente entender o que eles estão falando.</p>
     </div>
 
     <div class="memes-grid">
 
+      <!-- 1 — Funciona na minha máquina -->
       <div class="meme-card">
         <div class="meme-bubble">
           <span class="meme-emoji">🧑‍💻</span>
           <div class="meme-text">
             <p class="meme-top">"Isso funciona na minha máquina."</p>
-            <p class="meme-bottom">— Todo dev, antes do deploy</p>
+            <p class="meme-bottom">— Todo dev, para o QA, todo dia</p>
           </div>
         </div>
         <div class="meme-meta"><span class="meme-tag">Clássico</span></div>
         <h3 class="meme-title">"Funciona na minha máquina"</h3>
-        <p class="meme-explain">O código rodava perfeitamente no computador do desenvolvedor, mas ao subir para o servidor de produção simplesmente para de funcionar. Isso acontece porque o ambiente local tem configurações, versões de software e variáveis diferentes do servidor real. É tão comum que virou meme universal — e foi a principal motivação para criar ferramentas como Docker, que "empacotam" o ambiente junto com o código.</p>
-        <div class="meme-footer-note">💡 Daí surgiu a resposta irônica: <em>"Ship the machine."</em></div>
+        <p class="meme-explain">O código roda perfeitamente no computador do dev, mas no servidor de produção simplesmente trava. Isso acontece porque o ambiente local tem configurações, versões e variáveis diferentes do servidor real. É a frase mais dita na história da profissão — especialmente para o <strong>QA</strong> (Quality Assurance), a pessoa responsável por testar o sistema e que invariavelmente encontra o bug que "não existia". O QA reporta o erro, o dev abre no próprio computador e diz: "aqui tá funcionando." Esse ciclo tem nome: <em>works on my machine</em>. Foi a principal motivação para criar ferramentas como Docker, que empacotam o ambiente junto com o código.</p>
+        <div class="meme-footer-note">💡 Daí surgiu a resposta irônica: <em>"Ship the machine."</em> — manda o computador do dev junto com o sistema.</div>
       </div>
 
+      <!-- 2 — QA -->
+      <div class="meme-card">
+        <div class="meme-bubble meme-bubble--red">
+          <span class="meme-emoji">🔍</span>
+          <div class="meme-text">
+            <p class="meme-top">Dev: "Tá pronto, pode testar."</p>
+            <p class="meme-bottom">QA 5 minutos depois:<br>"Encontrei 12 bugs."</p>
+          </div>
+        </div>
+        <div class="meme-meta"><span class="meme-tag meme-tag--red">QA na área</span></div>
+        <h3 class="meme-title">QA — o detetive do time</h3>
+        <p class="meme-explain"><strong>QA</strong> (Quality Assurance) é a pessoa ou equipe responsável por garantir que o sistema funciona como deveria antes de chegar ao usuário. O trabalho deles é tentar quebrar o que o dev construiu — e eles são muito bons nisso. A relação dev-QA é de amor e ódio: o dev odeia receber o relatório de bugs, mas sem o QA os problemas chegariam direto ao usuário final. O QA não é o inimigo — é o que separa o time de uma catástrofe em produção.</p>
+        <div class="meme-footer-note">🛡️ Times sem QA dedicado geralmente descobrem os bugs pela pior via possível: o usuário reclamando.</div>
+      </div>
+
+      <!-- 3 — Testar em produção / não é bug é feature -->
       <div class="meme-card">
         <div class="meme-bubble meme-bubble--red">
           <span class="meme-emoji">🔥</span>
           <div class="meme-text">
-            <p class="meme-top">"Testar em produção"</p>
-            <p class="meme-bottom">não é um bug, é uma <em>feature</em></p>
+            <p class="meme-top">"Não é um bug."</p>
+            <p class="meme-bottom">É uma <em>feature</em> não documentada.</p>
           </div>
         </div>
-        <div class="meme-meta"><span class="meme-tag meme-tag--red">Perigo</span></div>
-        <h3 class="meme-title">"Testar em produção"</h3>
-        <p class="meme-explain">Produção é o ambiente real onde os usuários finais acessam o sistema. O caminho correto é testar em ambientes separados — desenvolvimento e homologação — antes de subir para lá. Quem testa direto em produção está fazendo cirurgia de treino em paciente real: se algo quebrar, todo mundo sente na hora.</p>
-        <div class="meme-footer-note">🚨 Em sistemas de saúde ou bancos, isso pode ser catastrófico de verdade.</div>
+        <div class="meme-meta"><span class="meme-tag meme-tag--red">Autodefesa</span></div>
+        <h3 class="meme-title">"Não é bug, é feature"</h3>
+        <p class="meme-explain">Quando algo no sistema se comporta de forma errada mas o dev não quer admitir — ou não tem tempo de corrigir — a saída clássica é declarar que aquilo é, na verdade, uma funcionalidade. Um <strong>bug</strong> é um comportamento incorreto do software. Uma <strong>feature</strong> é uma funcionalidade intencional. A piada está na inversão: o que deveria ser consertado vira algo que "estava planejado assim". É o equivalente a queimar o jantar e chamar de "culinária molecular".</p>
+        <div class="meme-footer-note">😅 A frase completa que circula nos times: <em>"Não é bug, é feature não documentada."</em></div>
       </div>
 
+      <!-- 4 — Não é bug se o usuário não encontrar -->
+      <div class="meme-card">
+        <div class="meme-bubble meme-bubble--dark">
+          <span class="meme-emoji">🙈</span>
+          <div class="meme-text">
+            <p class="meme-top">"Não é bug se o usuário não encontrar."</p>
+            <p class="meme-bottom">— Dev às 23h antes do prazo</p>
+          </div>
+        </div>
+        <div class="meme-meta"><span class="meme-tag meme-tag--purple">Filosofia dev</span></div>
+        <h3 class="meme-title">"Não é bug se ninguém achar"</h3>
+        <p class="meme-explain">A lógica (incorreta, mas muito praticada) de que um bug só importa se alguém tropeçar nele. Na teoria, todo bug deveria ser corrigido. Na prática, com prazo apertado e lista de prioridades enorme, bugs "ocultos" ficam escondidos em cantos do sistema que ninguém visita — até o dia em que um usuário clica exatamente no lugar certo e tudo desmorona. O dev que disse isso provavelmente sabe exatamente onde o bug está enterrado.</p>
+        <div class="meme-footer-note">⚠️ O problema é que o usuário sempre encontra. Sempre. Geralmente na pior hora possível.</div>
+      </div>
+
+      <!-- 5 — Produto pedindo coisa absurda -->
+      <div class="meme-card">
+        <div class="meme-bubble">
+          <span class="meme-emoji">📋</span>
+          <div class="meme-text">
+            <p class="meme-top">Produto: "É simples! É só fazer igual ao Google,<br>mas com o toque do Instagram<br>e entrega pra sexta."</p>
+            <p class="meme-bottom">Dev: "..."</p>
+          </div>
+        </div>
+        <div class="meme-meta"><span class="meme-tag meme-tag--blue">Time de Produto</span></div>
+        <h3 class="meme-title">O time de produto e o "é simples"</h3>
+        <p class="meme-explain">O time de <strong>produto</strong> (Product Manager / PO) é responsável por definir o que o sistema deve fazer e priorizar funcionalidades. A tensão clássica com o time de desenvolvimento acontece quando o produto pede algo que soa simples — mas tecnicamente é meses de trabalho. "Fazer igual ao Google" ignora que o Google tem milhares de engenheiros e décadas de desenvolvimento. Pedir isso pra sexta é como pedir uma reforma completa de apartamento pra amanhã.</p>
+        <div class="meme-footer-note">🤝 No RAD e no Scrum, o PO participa ativamente do processo justamente para alinhar expectativas antes de virar pedido impossível.</div>
+      </div>
+
+      <!-- 6 — Frontend vs Backend -->
       <div class="meme-card">
         <div class="meme-bubble meme-bubble--split">
           <div class="meme-vs">
@@ -620,24 +668,11 @@
         </div>
         <div class="meme-meta"><span class="meme-tag meme-tag--blue">Guerra eterna</span></div>
         <h3 class="meme-title">Frontend vs. Backend</h3>
-        <p class="meme-explain"><strong>Frontend</strong> é tudo que o usuário vê e clica: botões, animações, layout, cores. <strong>Backend</strong> é o que roda nos bastidores: banco de dados, regras de negócio, autenticação. Cada lado acha que o trabalho do outro é mais fácil. Quem faz os dois se chama Fullstack — e costuma ser cobrado como dois profissionais pelo salário de um.</p>
+        <p class="meme-explain"><strong>Frontend</strong> é tudo que o usuário vê e clica: botões, animações, layout, cores. <strong>Backend</strong> é o que roda nos bastidores: banco de dados, regras de negócio, autenticação. Cada lado acha que o trabalho do outro é mais fácil. Quem faz os dois se chama <strong>Fullstack</strong> — e costuma ser cobrado como dois profissionais pelo salário de um.</p>
         <div class="meme-footer-note">💡 Este próprio site usa as duas partes: HTML/CSS (front) e JS com lógica (back leve).</div>
       </div>
 
-      <div class="meme-card">
-        <div class="meme-bubble meme-bubble--dark">
-          <span class="meme-emoji">😴</span>
-          <div class="meme-text">
-            <p class="meme-top">Daily às 8h da manhã.</p>
-            <p class="meme-bottom">"O que você fez ontem?"<br>"... dormi até agora."</p>
-          </div>
-        </div>
-        <div class="meme-meta"><span class="meme-tag meme-tag--purple">Vida real</span></div>
-        <h3 class="meme-title">Por que dev odeia daily cedo</h3>
-        <p class="meme-explain">A <em>daily</em> (ou stand-up) é uma reunião diária curta do Scrum: cada pessoa diz o que fez, o que fará e se tem algum impedimento. O problema é que desenvolvedores frequentemente têm mais foco à noite, quando não há interrupções. Reunir todo mundo às 8h quebra o ritmo antes do café fazer efeito.</p>
-        <div class="meme-footer-note">🤓 Pesquisas mostram que programadores levam ~23 min para entrar em "flow". Uma reunião reseta esse relógio do zero.</div>
-      </div>
-
+      <!-- 7 — 99 bugs -->
       <div class="meme-card">
         <div class="meme-bubble">
           <span class="meme-emoji">💀</span>
@@ -648,10 +683,11 @@
         </div>
         <div class="meme-meta"><span class="meme-tag">Matemática do dev</span></div>
         <h3 class="meme-title">99 bugs no código</h3>
-        <p class="meme-explain">Corrigir um bug muitas vezes cria dois novos — porque o código é interligado. Mudar uma parte pode afetar comportamentos que pareciam não ter relação. Por isso existem os <em>testes automatizados</em>: scripts que verificam se o resto do sistema ainda funciona após cada alteração. Sem eles, consertar é como apertar um balão: some de um lado, aparece do outro.</p>
+        <p class="meme-explain">Corrigir um bug muitas vezes cria dois novos — porque o código é interligado. Mudar uma parte pode afetar comportamentos que pareciam não ter relação nenhuma. Por isso existem os <em>testes automatizados</em>: scripts que verificam se o resto do sistema ainda funciona após cada alteração. Sem eles, consertar é como apertar um balão: some de um lado, aparece do outro.</p>
         <div class="meme-footer-note">💡 O RAD usava prototipação iterativa exatamente para pegar bugs cedo, quando ainda são baratos de corrigir.</div>
       </div>
 
+      <!-- 8 — Deploy na sexta -->
       <div class="meme-card">
         <div class="meme-bubble meme-bubble--dark">
           <span class="meme-emoji">💣</span>
@@ -664,34 +700,6 @@
         <h3 class="meme-title">Nunca faça deploy na sexta</h3>
         <p class="meme-explain"><em>Deploy</em> é o ato de publicar uma nova versão do sistema para os usuários. Se algo der errado numa sexta à tarde, a equipe ou trabalha o fim de semana inteiro para corrigir, ou deixa o sistema quebrado até segunda. Virou uma regra não escrita da profissão. Quem já ignorou essa regra nunca mais ignora.</p>
         <div class="meme-footer-note">📅 Muitas empresas têm <em>freeze periods</em> oficiais: janelas proibidas de deploy perto de feriados e fins de semana.</div>
-      </div>
-
-      <div class="meme-card">
-        <div class="meme-bubble meme-bubble--red">
-          <span class="meme-emoji">🫣</span>
-          <div class="meme-text">
-            <p class="meme-top">"Prazo: sexta-feira."</p>
-            <p class="meme-bottom">Dev na quinta à noite: copy-paste<br>do Stack Overflow com fé.</p>
-          </div>
-        </div>
-        <div class="meme-meta"><span class="meme-tag meme-tag--red">Todo projeto</span></div>
-        <h3 class="meme-title">Stack Overflow e o prazo</h3>
-        <p class="meme-explain">Stack Overflow é o site de perguntas e respostas mais famoso de programação. Quando um dev está travado, a primeira coisa é pesquisar lá. Quando o prazo aperta, as buscas ficam desesperadas — e colar código sem entender é uma das maiores fontes de bugs. É o equivalente a copiar a resposta da prova sem entender e esperar que dê certo na oral.</p>
-        <div class="meme-footer-note">🤭 Hoje o ChatGPT virou o novo Stack Overflow. O resultado costuma ser o mesmo.</div>
-      </div>
-
-      <div class="meme-card">
-        <div class="meme-bubble">
-          <span class="meme-emoji">🤔</span>
-          <div class="meme-text">
-            <p class="meme-top">"Era só adicionar um campo no formulário."</p>
-            <p class="meme-bottom">3 semanas depois...</p>
-          </div>
-        </div>
-        <div class="meme-meta"><span class="meme-tag meme-tag--blue">Scope creep</span></div>
-        <h3 class="meme-title">"Era só uma coisinha"</h3>
-        <p class="meme-explain">O que parece simples para quem pede raramente é simples de implementar. Adicionar "só um campo" pode exigir mudar banco de dados, backend, frontend, validações, testes e documentação. Isso tem até nome: <em>scope creep</em> — quando o escopo cresce aos poucos com pedidos que parecem pequenos mas se acumulam. Foi um dos maiores problemas que o RAD tentou resolver com priorização constante.</p>
-        <div class="meme-footer-note">💡 No RAD e no Scrum, novas funcionalidades entram na fila (backlog) — não no meio do ciclo atual.</div>
       </div>
 
     </div>
