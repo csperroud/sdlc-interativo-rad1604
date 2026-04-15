@@ -562,6 +562,142 @@
 </section>
 
 <!-- ══ FOOTER ══════════════════════════════════════════════════════════ -->
+<!-- ══ MEMES ══════════════════════════════════════════════════════════════ -->
+<section id="memes" class="section section--memes">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Para não-devs</div>
+      <h2>Memes que seu amigo de TI manda</h2>
+      <p>As piadas do mundo do desenvolvimento — e o que elas realmente significam.</p>
+    </div>
+
+    <div class="memes-grid">
+
+      <div class="meme-card">
+        <div class="meme-bubble">
+          <span class="meme-emoji">🧑‍💻</span>
+          <div class="meme-text">
+            <p class="meme-top">"Isso funciona na minha máquina."</p>
+            <p class="meme-bottom">— Todo dev, antes do deploy</p>
+          </div>
+        </div>
+        <div class="meme-meta"><span class="meme-tag">Clássico</span></div>
+        <h3 class="meme-title">"Funciona na minha máquina"</h3>
+        <p class="meme-explain">O código rodava perfeitamente no computador do desenvolvedor, mas ao subir para o servidor de produção simplesmente para de funcionar. Isso acontece porque o ambiente local tem configurações, versões de software e variáveis diferentes do servidor real. É tão comum que virou meme universal — e foi a principal motivação para criar ferramentas como Docker, que "empacotam" o ambiente junto com o código.</p>
+        <div class="meme-footer-note">💡 Daí surgiu a resposta irônica: <em>"Ship the machine."</em></div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-bubble meme-bubble--red">
+          <span class="meme-emoji">🔥</span>
+          <div class="meme-text">
+            <p class="meme-top">"Testar em produção"</p>
+            <p class="meme-bottom">não é um bug, é uma <em>feature</em></p>
+          </div>
+        </div>
+        <div class="meme-meta"><span class="meme-tag meme-tag--red">Perigo</span></div>
+        <h3 class="meme-title">"Testar em produção"</h3>
+        <p class="meme-explain">Produção é o ambiente real onde os usuários finais acessam o sistema. O caminho correto é testar em ambientes separados — desenvolvimento e homologação — antes de subir para lá. Quem testa direto em produção está fazendo cirurgia de treino em paciente real: se algo quebrar, todo mundo sente na hora.</p>
+        <div class="meme-footer-note">🚨 Em sistemas de saúde ou bancos, isso pode ser catastrófico de verdade.</div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-bubble meme-bubble--split">
+          <div class="meme-vs">
+            <div class="meme-vs-side">
+              <span class="meme-vs-emoji">🎨</span>
+              <strong>Frontend</strong>
+              <small>Deixa bonito</small>
+            </div>
+            <div class="meme-vs-sep">vs</div>
+            <div class="meme-vs-side">
+              <span class="meme-vs-emoji">⚙️</span>
+              <strong>Backend</strong>
+              <small>Faz funcionar</small>
+            </div>
+          </div>
+          <p class="meme-vs-sub">"Fullstack faz os dois e chora sozinho"</p>
+        </div>
+        <div class="meme-meta"><span class="meme-tag meme-tag--blue">Guerra eterna</span></div>
+        <h3 class="meme-title">Frontend vs. Backend</h3>
+        <p class="meme-explain"><strong>Frontend</strong> é tudo que o usuário vê e clica: botões, animações, layout, cores. <strong>Backend</strong> é o que roda nos bastidores: banco de dados, regras de negócio, autenticação. Cada lado acha que o trabalho do outro é mais fácil. Quem faz os dois se chama Fullstack — e costuma ser cobrado como dois profissionais pelo salário de um.</p>
+        <div class="meme-footer-note">💡 Este próprio site usa as duas partes: HTML/CSS (front) e JS com lógica (back leve).</div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-bubble meme-bubble--dark">
+          <span class="meme-emoji">😴</span>
+          <div class="meme-text">
+            <p class="meme-top">Daily às 8h da manhã.</p>
+            <p class="meme-bottom">"O que você fez ontem?"<br>"... dormi até agora."</p>
+          </div>
+        </div>
+        <div class="meme-meta"><span class="meme-tag meme-tag--purple">Vida real</span></div>
+        <h3 class="meme-title">Por que dev odeia daily cedo</h3>
+        <p class="meme-explain">A <em>daily</em> (ou stand-up) é uma reunião diária curta do Scrum: cada pessoa diz o que fez, o que fará e se tem algum impedimento. O problema é que desenvolvedores frequentemente têm mais foco à noite, quando não há interrupções. Reunir todo mundo às 8h quebra o ritmo antes do café fazer efeito.</p>
+        <div class="meme-footer-note">🤓 Pesquisas mostram que programadores levam ~23 min para entrar em "flow". Uma reunião reseta esse relógio do zero.</div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-bubble">
+          <span class="meme-emoji">💀</span>
+          <div class="meme-text">
+            <p class="meme-top">99 bugs no código.</p>
+            <p class="meme-bottom">Corrigi 1.<br>101 bugs no código.</p>
+          </div>
+        </div>
+        <div class="meme-meta"><span class="meme-tag">Matemática do dev</span></div>
+        <h3 class="meme-title">99 bugs no código</h3>
+        <p class="meme-explain">Corrigir um bug muitas vezes cria dois novos — porque o código é interligado. Mudar uma parte pode afetar comportamentos que pareciam não ter relação. Por isso existem os <em>testes automatizados</em>: scripts que verificam se o resto do sistema ainda funciona após cada alteração. Sem eles, consertar é como apertar um balão: some de um lado, aparece do outro.</p>
+        <div class="meme-footer-note">💡 O RAD usava prototipação iterativa exatamente para pegar bugs cedo, quando ainda são baratos de corrigir.</div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-bubble meme-bubble--dark">
+          <span class="meme-emoji">💣</span>
+          <div class="meme-text">
+            <p class="meme-top">"Já foi, pessoal."</p>
+            <p class="meme-bottom">Dev que fez deploy<br>na sexta às 17h58.</p>
+          </div>
+        </div>
+        <div class="meme-meta"><span class="meme-tag meme-tag--purple">Regra sagrada</span></div>
+        <h3 class="meme-title">Nunca faça deploy na sexta</h3>
+        <p class="meme-explain"><em>Deploy</em> é o ato de publicar uma nova versão do sistema para os usuários. Se algo der errado numa sexta à tarde, a equipe ou trabalha o fim de semana inteiro para corrigir, ou deixa o sistema quebrado até segunda. Virou uma regra não escrita da profissão. Quem já ignorou essa regra nunca mais ignora.</p>
+        <div class="meme-footer-note">📅 Muitas empresas têm <em>freeze periods</em> oficiais: janelas proibidas de deploy perto de feriados e fins de semana.</div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-bubble meme-bubble--red">
+          <span class="meme-emoji">🫣</span>
+          <div class="meme-text">
+            <p class="meme-top">"Prazo: sexta-feira."</p>
+            <p class="meme-bottom">Dev na quinta à noite: copy-paste<br>do Stack Overflow com fé.</p>
+          </div>
+        </div>
+        <div class="meme-meta"><span class="meme-tag meme-tag--red">Todo projeto</span></div>
+        <h3 class="meme-title">Stack Overflow e o prazo</h3>
+        <p class="meme-explain">Stack Overflow é o site de perguntas e respostas mais famoso de programação. Quando um dev está travado, a primeira coisa é pesquisar lá. Quando o prazo aperta, as buscas ficam desesperadas — e colar código sem entender é uma das maiores fontes de bugs. É o equivalente a copiar a resposta da prova sem entender e esperar que dê certo na oral.</p>
+        <div class="meme-footer-note">🤭 Hoje o ChatGPT virou o novo Stack Overflow. O resultado costuma ser o mesmo.</div>
+      </div>
+
+      <div class="meme-card">
+        <div class="meme-bubble">
+          <span class="meme-emoji">🤔</span>
+          <div class="meme-text">
+            <p class="meme-top">"Era só adicionar um campo no formulário."</p>
+            <p class="meme-bottom">3 semanas depois...</p>
+          </div>
+        </div>
+        <div class="meme-meta"><span class="meme-tag meme-tag--blue">Scope creep</span></div>
+        <h3 class="meme-title">"Era só uma coisinha"</h3>
+        <p class="meme-explain">O que parece simples para quem pede raramente é simples de implementar. Adicionar "só um campo" pode exigir mudar banco de dados, backend, frontend, validações, testes e documentação. Isso tem até nome: <em>scope creep</em> — quando o escopo cresce aos poucos com pedidos que parecem pequenos mas se acumulam. Foi um dos maiores problemas que o RAD tentou resolver com priorização constante.</p>
+        <div class="meme-footer-note">💡 No RAD e no Scrum, novas funcionalidades entram na fila (backlog) — não no meio do ciclo atual.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer class="site-footer">
   <div class="footer-inner">
     <p>RAD1604 — Desenvolvimento de Sistemas de Informação · Prof. Dr. Ildeberto A. Rodello · Análise e Desenvolvimento de Sistemas · 2026</p>
