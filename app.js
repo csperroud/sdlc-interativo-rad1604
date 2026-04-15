@@ -579,8 +579,9 @@ function showResult() {
   document.getElementById('result-msg').textContent = msg;
 
   // nota 0–10
-  const nota = (score / total * 10).toFixed(1);
-  const notaColor = nota >= 7 ? 'var(--color-teal)' : nota >= 5 ? 'var(--color-orange)' : '#e05252';
+  const notaNum = score / total * 10;
+  const nota = notaNum.toFixed(1);
+  const notaColor = notaNum >= 7 ? 'var(--color-teal)' : notaNum >= 5 ? 'var(--color-orange)' : '#e05252';
 
   // placar destacado
   const scoreEl = document.getElementById('result-score');
