@@ -451,13 +451,25 @@ const QUIZ = [
 /* ══════════════════════════════════════════════════════════════════════
    QUIZ ENGINE
 ══════════════════════════════════════════════════════════════════════ */
+const QUIZ_SIZE = 10;
+
+function shuffleAndPick(arr, n) {
+  const copy = arr.slice();
+  for (let i = copy.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copy[i], copy[j]] = [copy[j], copy[i]];
+  }
+  return copy.slice(0, n);
+}
+
+let activeQuiz = shuffleAndPick(QUIZ, QUIZ_SIZE);
 let quizState = { current: 0, score: 0, answered: false };
 
 function renderQuestion() {
-  const q = QUIZ[quizState.current];
-  const pct = (quizState.current / QUIZ.length) * 100;
+  const q = activeQuiz[quizState.current];
+  const pct = (quizState.current / activeQuiz.length) * 100;
   document.getElementById('quiz-progress-fill').style.width = pct + '%';
-  document.getElementById('quiz-counter').textContent = `Questão ${quizState.current + 1} de ${QUIZ.length}`;
+  document.getElementById('quiz-counter').textContent = `Questão ${quizState.current + 1} de ${activeQuiz.length}`;
 
   const letters = ['A', 'B', 'C', 'D'];
   document.getElementById('quiz-card').innerHTML = `
@@ -470,6 +482,8 @@ function renderQuestion() {
           <span>${opt}</span>
         </button>`).join('')}
     </div>`;
+  // scroll to top of quiz card on mobile
+  document.getElementById('quiz-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
   document.getElementById('quiz-next').disabled = true;
   quizState.answered = false;
@@ -501,6 +515,15 @@ function handleAnswer(idx) {
     const fb = createFeedback(false, '✗ Incorreto', `A resposta correta é: <strong>${q.options[q.correct]}</strong>. ${q.feedback}`);
     document.getElementById('quiz-card').appendChild(fb);
   }
+  // inline live score badge
+  let badge = document.getElementById('quiz-live-score');
+  if (!badge) {
+    badge = document.createElement('div');
+    badge.id = 'quiz-live-score';
+    badge.style.cssText = 'text-align:right;font-size:0.8rem;color:var(--color-text-muted);margin-top:0.5rem;';
+    document.getElementById('quiz-card').appendChild(badge);
+  }
+  badge.textContent = `Acertos até agora: ${quizState.score} de ${quizState.current + 1}`;
 
   document.getElementById('quiz-next').disabled = false;
 }
@@ -514,7 +537,7 @@ function createFeedback(isCorrect, title, text) {
 
 document.getElementById('quiz-next')?.addEventListener('click', () => {
   quizState.current++;
-  if (quizState.current >= QUIZ.length) {
+  if (quizState.current >= activeQuiz.length) {
     showResult();
   } else {
     renderQuestion();
@@ -529,24 +552,34 @@ function showResult() {
 
   const result = document.getElementById('quiz-result');
   const score = quizState.score;
-  const total = QUIZ.length;
+  const total = activeQuiz.length;
   const pct = Math.round((score / total) * 100);
 
   let icon, title, msg;
-  if (pct >= 90) { icon = '🎓'; title = 'Excelente!'; msg = 'Domínio completo do conteúdo. Você está muito bem preparado para a apresentação.'; }
-  else if (pct >= 70) { icon = '👏'; title = 'Muito bom!'; msg = 'Você compreende os conceitos principais. Revise os tópicos em que errou para consolidar.'; }
-  else if (pct >= 50) { icon = '📚'; title = 'Bom começo.'; msg = 'Metade do caminho percorrido. Volte ao Explorer e aos Modelos para reforçar os pontos de dúvida.'; }
-  else { icon = '🔍'; title = 'Continue estudando.'; msg = 'Explore as seções anteriores — Explorer, Modelos e Comparativo — antes de tentar novamente.'; }
+  if (pct === 100)  { icon = '🏆'; title = 'Perfeito!';          msg = 'Acertou tudo! Domínio completo do conteúdo — você está muito bem preparado para a apresentação.'; }
+  else if (pct >= 80) { icon = '🎓'; title = 'Muito bem!';        msg = 'Ótimo desempenho. Revise rapidamente os tópicos em que errou para consolidar o aprendizado.'; }
+  else if (pct >= 60) { icon = '👏'; title = 'Bom resultado!';    msg = 'Você compreende os conceitos principais. Vale reforçar os pontos de dúvida no Explorer e nos Modelos.'; }
+  else if (pct >= 40) { icon = '📚'; title = 'Bom começo.';       msg = 'Metade do caminho. Volte ao Explorer e aos Modelos antes de tentar novamente.'; }
+  else               { icon = '🔍'; title = 'Continue estudando.'; msg = 'Explore as seções anteriores — Explorer, Modelos e Comparativo — antes de tentar de novo.'; }
 
   document.getElementById('result-icon').textContent = icon;
   document.getElementById('result-title').textContent = title;
   document.getElementById('result-msg').textContent = msg;
-  document.getElementById('result-score').textContent = `${score} / ${total} (${pct}%)`;
+
+  // placar destacado
+  const scoreEl = document.getElementById('result-score');
+  scoreEl.innerHTML = `
+    <span style="font-size:2.8rem;font-weight:800;color:var(--color-teal);line-height:1">${score}</span>
+    <span style="font-size:1.4rem;font-weight:500;color:var(--color-text-muted)"> de ${total} acertos</span>
+    <br><span style="font-size:1rem;color:var(--color-text-muted)">${pct}% de aproveitamento</span>
+  `;
 
   result.hidden = false;
+  result.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 document.getElementById('quiz-restart')?.addEventListener('click', () => {
+  activeQuiz = shuffleAndPick(QUIZ, QUIZ_SIZE);
   quizState = { current: 0, score: 0, answered: false };
   document.getElementById('quiz-result').hidden = true;
   document.getElementById('quiz-controls').style.display = '';
