@@ -633,7 +633,7 @@ renderQuestion();
 if (window.innerWidth <= 768) {
   const mobileNav = document.createElement('div');
   mobileNav.className = 'mobile-nav';
-  const sections = [['hero','Início'],['explorer','Explorer'],['models','Modelos'],['compare','Comparar'],['quiz','Quiz']];
+  const sections = [['hero','Início'],['explorer','Explorer'],['models','Modelos'],['compare','Comparar'],['quiz','Quiz'],['memes','Memes']];
   sections.forEach(([id, label]) => {
     const btn = document.createElement('button');
     btn.className = 'nav-tab' + (id === 'hero' ? ' active' : '');
