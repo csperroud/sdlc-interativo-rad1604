@@ -339,16 +339,16 @@ const QUIZ = [
     feedback: 'O SDLC não é uma metodologia — é um conceito descritivo. Como explicam os slides da disciplina: "dizer que viajamos por terra não diz se foi de carro, trem ou bicicleta". Cascata, RAD e as abordagens ágeis são formas distintas de percorrer esse mesmo ciclo de vida, cada uma com suas características e contextos de aplicação.'
   },
   {
-    tag: 'Ágil — Natureza',
-    question: 'O Ágil é uma metodologia de desenvolvimento de software?',
+    tag: 'RAD — Fase 1: Planejamento',
+    question: 'O que acontece na primeira fase do RAD — Planejamento de Requisitos?',
     options: [
-      'Sim, é uma metodologia completa com fases e papéis definidos',
-      'Não — o Ágil é um conjunto de princípios e valores que orienta frameworks como Scrum, Kanban e XP',
-      'Sim, foi criado como alternativa direta ao Cascata com regras próprias',
-      'Não — o Ágil é apenas um sinônimo moderno para o modelo RAD'
+      'A equipe codifica o sistema completo antes de apresentar qualquer resultado ao cliente',
+      'Gerentes, usuários e desenvolvedores definem juntos o escopo, os objetivos e as funções prioritárias do sistema',
+      'São produzidos todos os diagramas UML antes de qualquer decisão de negócio',
+      'O cliente assina um contrato fixando escopo e prazo imutáveis'
     ],
     correct: 1,
-    feedback: 'O Ágil não é uma metodologia — é uma filosofia expressa no Manifesto Ágil (2001), composta por princípios e valores. Os frameworks (Scrum, Kanban, XP, SAFe) é que definem práticas concretas. Essa distinção é fundamental: dizer "usamos Ágil" sem especificar o framework é como dizer "viajamos por terra" sem dizer o meio de transporte.'
+    feedback: 'Na primeira fase do RAD, executivos, gerentes e desenvolvedores se reúnem para identificar objetivos e definir o escopo do sistema. Diferente do Cascata, não se busca especificar tudo — o foco é alinhar prioridades e viabilidade, criando a base para o desenvolvimento iterativo que virá nas próximas fases.'
   },
   {
     tag: 'RAD — Citação de Martin',
@@ -423,28 +423,40 @@ const QUIZ = [
     feedback: 'O RAD apresenta limitações importantes: não é adequado para sistemas críticos ou fortemente regulados (como sistemas militares), pois a compressão temporal pode comprometer documentação e padronização. Também exige equipes experientes e usuários disponíveis — sem isso, o modelo perde sua essência iterativa.'
   },
   {
-    tag: 'RAD — Legado para o Ágil',
-    question: 'Qual é o principal legado do RAD para as abordagens ágeis?',
+    tag: 'RAD — Fase 2: Design',
+    question: 'O que caracteriza a fase de Design do Usuário no RAD?',
     options: [
-      'A exigência de documentação extensa antes de cada entrega',
-      'A lógica de entregas curtas, adaptação contínua e participação do usuário — princípios absorvidos pelo Scrum, Kanban e XP',
-      'A divisão rígida entre analistas e desenvolvedores ao longo do projeto',
-      'O uso obrigatório de ferramentas CASE em todos os projetos modernos'
+      'Os desenvolvedores trabalham isolados para criar a arquitetura técnica completa do sistema',
+      'Usuários e desenvolvedores colaboram em sessões intensivas para modelar processos e validar protótipos de forma iterativa',
+      'O analista produz um documento de design entregue ao cliente para aprovação formal',
+      'O foco é exclusivamente na criação do banco de dados, sem envolvimento do usuário'
     ],
     correct: 1,
-    feedback: 'O RAD foi importante porque aproximou o desenvolvimento de sistemas das necessidades reais do negócio. Seu legado aparece diretamente nas abordagens ágeis atuais, que mantêm essa lógica de entregas curtas, adaptação e melhoria contínua. Os princípios do RAD — iteratividade, prototipação e envolvimento do usuário — estão na base do que hoje chamamos de Ágil.'
+    feedback: 'Na fase de Design do Usuário, usuários e desenvolvedores trabalham juntos em sessões colaborativas (JRP/JAD) para modelar processos, fluxos e interfaces. Protótipos são criados, apresentados, validados e refinados em ciclos rápidos. Essa interação direta garante que o sistema reflita as necessidades reais — não o que foi documentado meses antes.'
   },
   {
-    tag: 'RAD — Tendência atual',
-    question: 'O que aconteceu com os princípios do RAD na indústria de software atual?',
+    tag: 'RAD — Fase 3: Construção',
+    question: 'Como funciona a fase de Construção no RAD?',
     options: [
-      'Foram completamente abandonados com a popularização do Cascata moderno',
-      'Permanecem exclusivamente em projetos governamentais e militares',
-      'Foram absorvidos pelas abordagens ágeis e pelas plataformas low-code, tornando-se parte do desenvolvimento contemporâneo',
-      'Só sobrevivem no DSDM, framework restrito à Europa'
+      'O código é escrito do zero, sem reutilização de componentes ou ferramentas de geração automática',
+      'A construção ocorre uma única vez, após o design estar completamente aprovado',
+      'O SWAT Team converte os protótipos em sistema funcional usando ferramentas CASE, com o usuário ainda envolvido para ajustes fináis',
+      'Nessa fase, o cliente é excluído do processo até a entrega final'
     ],
     correct: 2,
-    feedback: 'Os princípios do RAD não desapareceram — foram absorvidos. As abordagens ágeis (Scrum, Kanban, XP) incorporaram sua lógica iterativa e centrada no usuário. As plataformas low-code atuais retomam a ideia de geração rápida de sistemas com mínima codificação manual, que era a promessa original das ferramentas CASE do RAD de Martin.'
+    feedback: 'Na Construção, o SWAT Team transforma os protótipos validados em um sistema funcional, utilizando ferramentas CASE para acelerar a geração de código. O usuário permanece envolvido para identificar ajustes e confirmar que o resultado atende às expectativas. As fases 2 e 3 frequentemente se sobrepõem em ciclos iterativos até a aprovação.'
+  },
+  {
+    tag: 'RAD — Fase 4: Cutover',
+    question: 'O que ocorre na fase de Cutover do RAD?',
+    options: [
+      'É quando os requisitos da próxima versão são levantados do zero, reiniciando o ciclo Cascata',
+      'O sistema é colocado em produção, os usuários são treinados e o sistema legado é desativado gradualmente',
+      'O cliente assina o termo de aceite e o projeto é encerrado definitivamente',
+      'A equipe é dissolvida e a documentação final é entregue ao departamento de TI'
+    ],
+    correct: 1,
+    feedback: 'O Cutover é a fase final de cada versão no RAD: o sistema vai a produção, usuários são treinados e o sistema legado é migrado ou desativado de forma gradual. Diferente do Cascata — onde a implantação encerra o projeto — no RAD o Cutover encerra apenas uma versão. O ciclo recomeça para a versão seguinte, incorporando o feedback e os novos requisitos levantados.'
   }
 ];
 
