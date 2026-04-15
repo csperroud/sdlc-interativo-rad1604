@@ -485,7 +485,14 @@ function renderQuestion() {
   // scroll to top of quiz card on mobile
   document.getElementById('quiz-card').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
-  document.getElementById('quiz-next').disabled = true;
+  // Última pergunta: troca botão
+  const isLast = quizState.current === activeQuiz.length - 1;
+  const nextBtn = document.getElementById('quiz-next');
+  const exitBtn = document.getElementById('quiz-exit');
+  nextBtn.textContent = isLast ? 'Ver resultado' : 'Próxima →';
+  nextBtn.style.display = '';
+  if (exitBtn) exitBtn.style.display = 'none';
+  nextBtn.disabled = true;
   quizState.answered = false;
 
   document.querySelectorAll('.quiz-option').forEach(btn => {
@@ -497,7 +504,7 @@ function handleAnswer(idx) {
   if (quizState.answered) return;
   quizState.answered = true;
 
-  const q = QUIZ[quizState.current];
+  const q = activeQuiz[quizState.current];
   const options = document.querySelectorAll('.quiz-option');
   options.forEach(b => b.disabled = true);
 
@@ -526,6 +533,11 @@ function handleAnswer(idx) {
   badge.textContent = `Acertos até agora: ${quizState.score} de ${quizState.current + 1}`;
 
   document.getElementById('quiz-next').disabled = false;
+  // Na última questão, após responder, mostra botão Sair também
+  if (quizState.current === activeQuiz.length - 1) {
+    const exitBtn = document.getElementById('quiz-exit');
+    if (exitBtn) exitBtn.style.display = '';
+  }
 }
 
 function createFeedback(isCorrect, title, text) {
@@ -566,12 +578,23 @@ function showResult() {
   document.getElementById('result-title').textContent = title;
   document.getElementById('result-msg').textContent = msg;
 
+  // nota 0–10
+  const nota = (score / total * 10).toFixed(1);
+  const notaColor = nota >= 7 ? 'var(--color-teal)' : nota >= 5 ? 'var(--color-orange)' : '#e05252';
+
   // placar destacado
   const scoreEl = document.getElementById('result-score');
   scoreEl.innerHTML = `
-    <span style="font-size:2.8rem;font-weight:800;color:var(--color-teal);line-height:1">${score}</span>
-    <span style="font-size:1.4rem;font-weight:500;color:var(--color-text-muted)"> de ${total} acertos</span>
-    <br><span style="font-size:1rem;color:var(--color-text-muted)">${pct}% de aproveitamento</span>
+    <div style="margin-bottom:1rem">
+      <span style="font-size:2.8rem;font-weight:800;color:var(--color-teal);line-height:1">${score}</span>
+      <span style="font-size:1.4rem;font-weight:500;color:var(--color-text-muted)"> de ${total} acertos</span>
+      <br><span style="font-size:0.9rem;color:var(--color-text-muted)">${pct}% de aproveitamento</span>
+    </div>
+    <div style="border-top:1px solid var(--color-border);padding-top:1rem;margin-top:0.5rem">
+      <div style="font-size:0.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-muted);margin-bottom:0.25rem">Nota final</div>
+      <span style="font-size:3.5rem;font-weight:900;color:${notaColor};line-height:1">${nota}</span>
+      <span style="font-size:1.2rem;color:var(--color-text-muted)"> / 10</span>
+    </div>
   `;
 
   result.hidden = false;
@@ -583,6 +606,8 @@ document.getElementById('quiz-restart')?.addEventListener('click', () => {
   quizState = { current: 0, score: 0, answered: false };
   document.getElementById('quiz-result').hidden = true;
   document.getElementById('quiz-controls').style.display = '';
+  const exitBtn = document.getElementById('quiz-exit');
+  if (exitBtn) exitBtn.style.display = 'none';
   renderQuestion();
 });
 
