@@ -296,6 +296,18 @@ document.querySelectorAll('.compare-row').forEach(row => {
 ══════════════════════════════════════════════════════════════════════ */
 const QUIZ = [
   {
+    tag: 'SDLC — Sequência de fases',
+    question: 'Qual é a sequência correta das fases do modelo Cascata (Waterfall)?',
+    options: [
+      'Implementação → Análise de Requisitos → Projeto → Testes → Planejamento → Implantação',
+      'Planejamento → Análise de Requisitos → Projeto → Implementação → Testes → Implantação → Manutenção',
+      'Planejamento → Projeto → Análise de Requisitos → Implementação → Implantação → Testes',
+      'Análise de Requisitos → Planejamento → Implementação → Projeto → Testes → Manutenção'
+    ],
+    correct: 1,
+    feedback: 'No modelo Cascata, as fases seguem uma ordem estritamente sequencial: Planejamento → Análise de Requisitos → Projeto (Design) → Implementação → Testes e Verificação → Implantação → Manutenção. Cada fase precisa estar concluída e aprovada antes que a próxima se inicie — daí o nome "Cascata": o resultado de cada fase desce para a seguinte como uma queda d\'água, sem retorno.'
+  },
+  {
     tag: 'RAD — Crise do software',
     question: 'Qual crise impulsionou o surgimento do RAD nos anos 1990?',
     options: [

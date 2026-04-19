@@ -1233,10 +1233,7 @@ p { max-width: 72ch; }
   color: var(--color-text-muted);
   flex-shrink: 0;
   transition: opacity .3s;
-  animation: hint-pulse 2s ease-in-out infinite;
 }
 
-@keyframes hint-pulse {
-  0%, 100% { opacity: .5; transform: translateY(-50%) translateX(0); }
   50% { opacity: 1; transform: translateY(-50%) translateX(3px); }
 }
