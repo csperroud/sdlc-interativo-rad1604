@@ -1216,9 +1216,11 @@ p { max-width: 72ch; }
   transition: opacity .3s;
 }
 
-/* hide fade when scrolled to end — toggled via JS */
+/* hide fade + hint when scrolled to end OR when nav has no overflow */
 .nav-scroll-wrapper.at-end::after { opacity: 0; }
 .nav-scroll-wrapper.at-end .nav-scroll-hint { opacity: 0; pointer-events: none; }
+.nav-scroll-wrapper.no-overflow::after { opacity: 0; }
+.nav-scroll-wrapper.no-overflow .nav-scroll-hint { opacity: 0; pointer-events: none; }
 
 .nav-scroll-hint {
   position: absolute;
@@ -1233,6 +1235,7 @@ p { max-width: 72ch; }
   color: var(--color-text-muted);
   flex-shrink: 0;
   transition: opacity .3s;
+  opacity: 1;
 }
 
   50% { opacity: 1; transform: translateY(-50%) translateX(3px); }

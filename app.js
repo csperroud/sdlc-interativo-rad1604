@@ -638,7 +638,7 @@ renderQuestion();
 if (window.innerWidth <= 768) {
   const mobileNav = document.createElement('div');
   mobileNav.className = 'mobile-nav';
-  const sections = [['hero','Início'],['models','Modelos'],['equipes','Equipes RAD'],['compare','Comparar'],['quiz','Quiz'],['glossario','Glossário'],['memes','Memes']];
+  const sections = [['hero','Início'],['models','Modelos'],['compare','Comparar'],['quiz','Quiz'],['glossario','Glossário'],['memes','Memes']];
   sections.forEach(([id, label]) => {
     const btn = document.createElement('button');
     btn.className = 'nav-tab' + (id === 'hero' ? ' active' : '');
@@ -659,8 +659,10 @@ if (window.innerWidth <= 768) {
   if (!wrapper || !nav) return;
 
   function checkScroll() {
+    const hasOverflow = nav.scrollWidth > nav.clientWidth + 4;
     const atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
-    wrapper.classList.toggle('at-end', atEnd);
+    wrapper.classList.toggle('no-overflow', !hasOverflow);
+    wrapper.classList.toggle('at-end', hasOverflow && atEnd);
   }
 
   nav.addEventListener('scroll', checkScroll, { passive: true });
