@@ -180,7 +180,8 @@ p { max-width: 72ch; }
 .logo-text { font-family: var(--font-display); font-size: var(--text-sm); font-weight: 600; letter-spacing: 0.02em; }
 .logo-dot { color: var(--color-primary); }
 
-.nav-tabs { display: flex; gap: var(--space-1); flex: 1; justify-content: center; }
+.nav-tabs { display: flex; gap: var(--space-1); flex: 1; justify-content: center; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.nav-tabs::-webkit-scrollbar { display: none; }
 .nav-tab {
   padding: var(--space-2) var(--space-4);
   border-radius: var(--radius-full);
@@ -1192,3 +1193,50 @@ p { max-width: 72ch; }
 }
 
 .gloss-desc strong { color: var(--color-text); }
+
+/* ── Nav scroll wrapper — fade + hint arrow ──────────────────────────── */
+.nav-scroll-wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.nav-scroll-wrapper::after {
+  content: '';
+  position: absolute;
+  right: 28px;
+  top: 0;
+  bottom: 0;
+  width: 40px;
+  background: linear-gradient(to right, transparent, var(--color-bg));
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity .3s;
+}
+
+/* hide fade when scrolled to end — toggled via JS */
+.nav-scroll-wrapper.at-end::after { opacity: 0; }
+.nav-scroll-wrapper.at-end .nav-scroll-hint { opacity: 0; pointer-events: none; }
+
+.nav-scroll-hint {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+  transition: opacity .3s;
+  animation: hint-pulse 2s ease-in-out infinite;
+}
+
+@keyframes hint-pulse {
+  0%, 100% { opacity: .5; transform: translateY(-50%) translateX(0); }
+  50% { opacity: 1; transform: translateY(-50%) translateX(3px); }
+}

@@ -637,3 +637,22 @@ if (window.innerWidth <= 768) {
   });
   document.querySelector('.header-inner')?.appendChild(mobileNav);
 }
+
+/* ══════════════════════════════════════════════════════════════════════
+   NAV SCROLL HINT — hide fade/arrow when scrolled to end
+══════════════════════════════════════════════════════════════════════ */
+(function () {
+  const wrapper = document.querySelector('.nav-scroll-wrapper');
+  const nav = document.querySelector('.nav-tabs');
+  if (!wrapper || !nav) return;
+
+  function checkScroll() {
+    const atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    wrapper.classList.toggle('at-end', atEnd);
+  }
+
+  nav.addEventListener('scroll', checkScroll, { passive: true });
+  // Run on load and on resize
+  checkScroll();
+  window.addEventListener('resize', checkScroll);
+})();
