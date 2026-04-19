@@ -26,10 +26,11 @@
     </div>
     <nav class="nav-tabs" role="navigation" aria-label="Navegação principal">
       <button class="nav-tab active" data-section="hero">Início</button>
-      <button class="nav-tab" data-section="explorer">Explorer</button>
       <button class="nav-tab" data-section="models">Modelos</button>
+      <button class="nav-tab" data-section="equipes">Equipes RAD</button>
       <button class="nav-tab" data-section="compare">Comparativo</button>
       <button class="nav-tab" data-section="quiz">Quiz</button>
+      <button class="nav-tab" data-section="glossario">Glossário</button>
     </nav>
     <button class="theme-toggle" data-theme-toggle aria-label="Alternar tema">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -45,20 +46,20 @@
     <h1 class="hero-title">Ciclo de Vida do<br/><em>Desenvolvimento</em> de Sistemas</h1>
     <p class="hero-sub">Explore de forma interativa os três principais modelos que organizam o SDLC: <strong>Cascata</strong>, <strong>RAD</strong> e <strong>RAD + Ágil</strong>. Navegue pelas fases, compare abordagens e teste seus conhecimentos.</p>
     <div class="hero-cta-row">
-      <button class="btn btn--primary" data-go="explorer">
-        Explorar o SDLC
+      <button class="btn btn--primary" data-go="models">
+        Explorar os Modelos
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </button>
       <button class="btn btn--ghost" data-go="models">Ver os Modelos</button>
     </div>
     <div class="hero-cards">
-      <div class="hero-card" data-go="explorer" tabindex="0" role="button">
-        <div class="hero-card-icon" style="background: var(--color-blue-soft)">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-blue)" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      <div class="hero-card" data-go="equipes" tabindex="0" role="button">
+        <div class="hero-card-icon" style="background: var(--color-teal-soft)">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><circle cx="19" cy="7" r="3"/><path d="M23 21v-2a3 3 0 0 0-2-2.83"/></svg>
         </div>
         <div>
-          <strong>SDLC Explorer</strong>
-          <p>Percorra as camadas do ciclo de vida clicando em cada fase</p>
+          <strong>Equipes do RAD</strong>
+          <p>Papéis, comunicação e como o SWAT Team funciona na prática</p>
         </div>
       </div>
       <div class="hero-card" data-go="models" tabindex="0" role="button">
@@ -93,148 +94,6 @@
 </section>
 
 <!-- ══ SECTION: SDLC EXPLORER ══════════════════════════════════════════ -->
-<section id="explorer" class="section section--explorer">
-  <div class="container container--wide">
-    <div class="section-header">
-      <div class="section-label">SDLC Explorer</div>
-      <h2>O que é o Ciclo de Vida do Desenvolvimento?</h2>
-      <p>O SDLC (Software Development Life Cycle) é o conjunto estruturado de fases que organiza a criação de um sistema. Clique em cada camada para explorar o que acontece em cada nível.</p>
-    </div>
-
-    <div class="sdlc-hierarchy">
-      <!-- Layer 1: Philosophy -->
-      <div class="sdlc-layer" data-layer="0">
-        <div class="sdlc-layer-btn" data-expand="0">
-          <div class="layer-marker l0"></div>
-          <span class="layer-label">Filosofia / Manifesto</span>
-          <span class="layer-meta">Base conceitual</span>
-          <svg class="layer-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="sdlc-layer-content" id="content-0">
-          <div class="layer-detail">
-            <h3>O nível mais abstrato</h3>
-            <p>Aqui vivem os <strong>valores e princípios</strong> que guiam como uma equipe pensa sobre desenvolvimento. O Manifesto Ágil (2001), por exemplo, não é uma metodologia — é uma declaração de valores: indivíduos sobre processos, software funcionando sobre documentação extensa.</p>
-            <div class="layer-chips">
-              <span class="chip chip--teal">Manifesto Ágil</span>
-              <span class="chip chip--teal">Lean Thinking</span>
-              <span class="chip chip--teal">Empirismo Scrum</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Layer 2: Models -->
-      <div class="sdlc-layer" data-layer="1">
-        <div class="sdlc-layer-btn" data-expand="1">
-          <div class="layer-marker l1"></div>
-          <span class="layer-label">Modelos de Processo</span>
-          <span class="layer-meta">Como o ciclo é organizado</span>
-          <svg class="layer-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="sdlc-layer-content" id="content-1">
-          <div class="layer-detail">
-            <h3>Estrutura do ciclo de vida</h3>
-            <p>Os modelos definem <strong>como as fases do SDLC se relacionam</strong>: sequencialmente (Cascata), em ciclos rápidos com usuário (RAD clássico) ou com princípios ágeis aplicados ao próprio RAD (RAD + Ágil). Ágil não é um modelo — é uma filosofia que orienta como o RAD evoluiu.</p>
-            <div class="model-trio">
-              <div class="mini-model mm--cascata">
-                <strong>Cascata</strong>
-                <span>Linear · Sequencial</span>
-              </div>
-              <div class="mini-model mm--rad">
-                <strong>RAD</strong>
-                <span>Iterativo · Timebox</span>
-              </div>
-              <div class="mini-model mm--agil">
-                <strong>Ágil</strong>
-                <span>Incremental · Sprints</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Layer 3: Frameworks -->
-      <div class="sdlc-layer" data-layer="2">
-        <div class="sdlc-layer-btn" data-expand="2">
-          <div class="layer-marker l2"></div>
-          <span class="layer-label">Frameworks & Metodologias</span>
-          <span class="layer-meta">Como o trabalho é organizado na prática</span>
-          <svg class="layer-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="sdlc-layer-content" id="content-2">
-          <div class="layer-detail">
-            <h3>Scrum, XP, Kanban, DSDM…</h3>
-            <p>Os frameworks operacionalizam os modelos com <strong>papéis, cerimônias e artefatos</strong> concretos. O Scrum define Product Owner, Sprint Planning e Retrospectiva. O Kanban visualiza o fluxo com cartões. O XP prescreve práticas de engenharia como TDD e pair programming.</p>
-            <div class="layer-chips">
-              <span class="chip chip--purple">Scrum</span>
-              <span class="chip chip--purple">XP</span>
-              <span class="chip chip--purple">Kanban</span>
-              <span class="chip chip--purple">DSDM</span>
-              <span class="chip chip--purple">SAFe</span>
-              <span class="chip chip--purple">LeSS</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Layer 4: Practices -->
-      <div class="sdlc-layer" data-layer="3">
-        <div class="sdlc-layer-btn" data-expand="3">
-          <div class="layer-marker l3"></div>
-          <span class="layer-label">Práticas de Engenharia</span>
-          <span class="layer-meta">Técnicas do dia a dia</span>
-          <svg class="layer-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="sdlc-layer-content" id="content-3">
-          <div class="layer-detail">
-            <h3>O que os desenvolvedores fazem</h3>
-            <p>No nível mais concreto estão as <strong>técnicas e práticas técnicas</strong>: TDD (Test-Driven Development), CI/CD (integração e entrega contínua), refatoração, code review e sessões JAD. Essas práticas podem ser usadas com qualquer framework — elas são ortogonais ao modelo adotado.</p>
-            <div class="layer-chips">
-              <span class="chip chip--orange">TDD</span>
-              <span class="chip chip--orange">CI/CD</span>
-              <span class="chip chip--orange">Pair Programming</span>
-              <span class="chip chip--orange">Sessões JAD</span>
-              <span class="chip chip--orange">Refatoração</span>
-              <span class="chip chip--orange">Feature Flags</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Layer 5: Tools -->
-      <div class="sdlc-layer" data-layer="4">
-        <div class="sdlc-layer-btn" data-expand="4">
-          <div class="layer-marker l4"></div>
-          <span class="layer-label">Ferramentas & Artefatos</span>
-          <span class="layer-meta">O que é produzido e utilizado</span>
-          <svg class="layer-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
-        </div>
-        <div class="sdlc-layer-content" id="content-4">
-          <div class="layer-detail">
-            <h3>Artefatos e ferramentas de suporte</h3>
-            <p>São os <strong>documentos, protótipos, sistemas e ferramentas</strong> que dão suporte ao processo: backlog no Jira, repositório no GitHub, documentação no Confluence, protótipos no Figma, testes automatizados no JUnit. Os artefatos produzidos variam conforme o modelo — no Cascata há muita documentação antecipada; no Ágil, há software funcionando a cada sprint.</p>
-            <div class="layer-chips">
-              <span class="chip chip--green">Jira / Trello</span>
-              <span class="chip chip--green">GitHub / GitLab</span>
-              <span class="chip chip--green">Figma</span>
-              <span class="chip chip--green">Confluence</span>
-              <span class="chip chip--green">Product Backlog</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="sdlc-spine" aria-hidden="true"></div>
-    </div>
-
-    <!-- Key insight -->
-    <div class="insight-box">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
-      <p><strong>Ponto-chave:</strong> Ágil não é uma metodologia — é uma filosofia. Scrum é um framework. Cascata e RAD são modelos de processo. Eles operam em camadas distintas da hierarquia acima.</p>
-    </div>
-  </div>
-</section>
-
 <!-- ══ SECTION: MODELOS ════════════════════════════════════════════════ -->
 <section id="models" class="section section--models">
   <div class="container container--wide">
@@ -400,10 +259,119 @@
         <div class="summary-chip"><strong>Base:</strong> RAD (Martin, 1991) + Manifesto Ágil (2001)</div>
         <div class="summary-chip"><strong>Ainda é RAD porque:</strong> fases, timebox, protótipos, usuário no centro</div>
         <div class="summary-chip"><strong>Diferença do RAD clássico:</strong> sprints curtos, CI/CD, retrospectiva</div>
-        <div class="summary-chip"><strong>Usado por:</strong> Nubank, Spotify, GitHub, Notion, Linear</div>
+        <div class="summary-chip"><strong>Contexto atual:</strong> Adotado em produtos digitais que precisam evoluir continuamente</div>
       </div>
     </div>
 
+  </div>
+</section>
+
+<!-- ══ SECTION: EQUIPES RAD ══════════════════════════════════════════ -->
+<section id="equipes" class="section section--equipes">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Como o RAD funciona na prática</div>
+      <h2>As equipes do RAD e como elas dialogam</h2>
+      <p>O RAD não é só um processo — é uma forma de organizar pessoas. Veja quem está em cada papel e como a comunicação flui entre eles.</p>
+    </div>
+
+    <div class="equipes-layout">
+
+      <!-- Diagrama de papéis -->
+      <div class="equipes-roles">
+
+        <div class="role-card role--usuario">
+          <div class="role-icon">👤</div>
+          <div class="role-info">
+            <h3>Usuário / Especialista de Negócio</h3>
+            <p>A pessoa que conhece o problema, não a tecnologia. Participa ativamente das sessões JRP e JAD, valida protótipos e aprova versões. No RAD, o usuário não é um cliente distante — é membro ativo do processo.</p>
+            <div class="role-tags">
+              <span class="role-tag">Valida protótipos</span>
+              <span class="role-tag">Participa das sessões JAD</span>
+              <span class="role-tag">Aprova o Cutover</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="role-card role--facilitador">
+          <div class="role-icon">🎙️</div>
+          <div class="role-info">
+            <h3>Facilitador JAD</h3>
+            <p>Conduz as sessões JRP e JAD. Não é desenvolvedor, não é usuário — é o mediador neutro que mantém o foco, evita que a conversa desvie e garante que decisões sejam tomadas durante a sessão, não depois. É um papel especializado: exige preparo, conhecimento do processo e habilidade para lidar com conflitos de expectativa.</p>
+            <div class="role-tags">
+              <span class="role-tag">Conduz as sessões</span>
+              <span class="role-tag">Neutralidade entre dev e negócio</span>
+              <span class="role-tag">Registra decisões em tempo real</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="role-card role--swat">
+          <div class="role-icon">⚙️</div>
+          <div class="role-info">
+            <h3>SWAT Team (Equipe de Desenvolvimento)</h3>
+            <p>Time pequeno (4 a 6 pessoas), multifuncional e altamente qualificado — <em>Skilled Workers with Advanced Tools</em>. Inclui desenvolvedores experientes, às vezes um analista e, no RAD clássico, usuários representantes integrados ao time. O SWAT é o núcleo do timebox: trabalha de forma intensa e sem interrupções externas durante o ciclo.</p>
+            <div class="role-tags">
+              <span class="role-tag">Constrói os protótipos</span>
+              <span class="role-tag">Usa ferramentas CASE (RAD clássico)</span>
+              <span class="role-tag">Integrado ao usuário</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="role-card role--gerente">
+          <div class="role-icon">📋</div>
+          <div class="role-info">
+            <h3>Gerente de Projeto / Sponsor</h3>
+            <p>Define o escopo inicial, garante recursos e remove impedimentos. No RAD, o gerente tem um papel diferente do Cascata: ele não controla cada fase — ele protege o timebox. Sua principal função é blindar o SWAT Team de interrupções e garantir acesso contínuo ao usuário durante o desenvolvimento.</p>
+            <div class="role-tags">
+              <span class="role-tag">Define escopo inicial</span>
+              <span class="role-tag">Protege o timebox</span>
+              <span class="role-tag">Garante acesso ao usuário</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Como dialogam -->
+      <div class="equipes-dialogo">
+        <h3 class="dialogo-title">Como a comunicação flui</h3>
+
+        <div class="dialogo-step">
+          <div class="dialogo-num">1</div>
+          <div class="dialogo-content">
+            <strong>Sessão JRP — Gerente + Usuário + Facilitador</strong>
+            <p>O ponto de partida. Gerentes de negócio, usuários-chave e o facilitador definem juntos: qual é o problema, o que o sistema precisa resolver e quais funcionalidades são prioridade. Não é uma reunião de requisitos técnicos — é uma conversa estratégica com resultado concreto: escopo do timebox.</p>
+          </div>
+        </div>
+
+        <div class="dialogo-step">
+          <div class="dialogo-num">2</div>
+          <div class="dialogo-content">
+            <strong>Sessão JAD — Usuário + SWAT Team + Facilitador</strong>
+            <p>O coração da comunicação no RAD. Usuários e desenvolvedores sentam juntos — literalmente — para projetar o sistema. O facilitador conduz, o SWAT Team constrói protótipos em tempo real na tela, o usuário reage e valida na hora. Decisões que levariam semanas por e-mail são tomadas em horas. O protótipo sai da sessão já validado.</p>
+          </div>
+        </div>
+
+        <div class="dialogo-step">
+          <div class="dialogo-num">3</div>
+          <div class="dialogo-content">
+            <strong>Iteração Design ⇄ Construção — SWAT Team</strong>
+            <p>Entre as sessões JAD, o SWAT Team trabalha de forma autônoma: refina o protótipo, codifica, testa internamente e prepara a próxima versão para apresentar ao usuário. Não há aprovação formal entre cada iteração — a agilidade vem da confiança que o processo de JAD já estabeleceu.</p>
+          </div>
+        </div>
+
+        <div class="dialogo-step">
+          <div class="dialogo-num">4</div>
+          <div class="dialogo-content">
+            <strong>Cutover — SWAT Team + Usuário + Gerente</strong>
+            <p>A versão está pronta. O gerente aprova a transição, o SWAT Team executa o deploy, o usuário passa por treinamento e o sistema legado é desativado gradualmente. Ao contrário do Cascata — onde isso encerra o projeto — no RAD o Cutover encerra a versão. O ciclo recomeça imediatamente para a V2, com os requisitos que ficaram de fora da V1.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
 </section>
 
@@ -480,7 +448,7 @@
             <td class="criterion">Estrutura da equipe</td>
             <td class="col-cascata">Funcional e hierárquica; papéis bem definidos por fase</td>
             <td class="col-rad">Pequenas equipes multifuncionais; usuários integrados no processo</td>
-            <td class="col-agil">Squads autônomos e multifuncionais (modelo Spotify); herdados diretamente do SWAT Team do RAD</td>
+            <td class="col-agil">Squads autônomos e multifuncionais; estrutura herdada diretamente do SWAT Team do RAD clássico</td>
           </tr>
           <tr class="compare-row" data-row="8">
             <td class="criterion">Riscos principais</td>
@@ -498,7 +466,7 @@
             <td class="criterion">Exemplos reais</td>
             <td class="col-cascata">Sistema de controle de voo da NASA; projetos licitatórios governamentais</td>
             <td class="col-rad">Sistemas de gestão bancária (anos 1990–2000); ERPs legados</td>
-            <td class="col-agil">Nubank, Spotify, GitHub, Notion, Linear — entregam a cada dia ou semana com squads autônomos</td>
+            <td class="col-agil">Produtos digitais com deploys frequentes, squads autônomos e backlog priorizado continuamente</td>
           </tr>
           <tr class="compare-row" data-row="11">
             <td class="criterion">Legado histórico</td>
@@ -692,6 +660,106 @@
         <h3 class="meme-title">Nunca faça deploy na sexta</h3>
         <p class="meme-explain"><em>Deploy</em> é o ato de publicar uma nova versão do sistema para os usuários. Se algo der errado numa sexta à tarde, a equipe ou trabalha o fim de semana inteiro para corrigir, ou deixa o sistema quebrado até segunda. Virou uma regra não escrita da profissão. Quem já ignorou essa regra nunca mais ignora.</p>
         <div class="meme-footer-note">📅 Muitas empresas têm <em>freeze periods</em> oficiais: janelas proibidas de deploy perto de feriados e fins de semana.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══ SECTION: GLOSSÁRIO ════════════════════════════════════════════ -->
+<section id="glossario" class="section section--glossario">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Referência rápida</div>
+      <h2>Glossário de Termos Técnicos</h2>
+      <p>Os termos mais usados no RAD, no SDLC e nas práticas ágeis — explicados de forma direta para você não precisar sair da página.</p>
+    </div>
+
+    <div class="glossario-grid">
+
+      <div class="gloss-card gloss--rad">
+        <div class="gloss-tag">RAD — Sessão</div>
+        <h3 class="gloss-term">JRP</h3>
+        <p class="gloss-full">Joint Requirements Planning</p>
+        <p class="gloss-desc">Workshop estruturado que reúne executivos, gerentes de negócio e desenvolvedores para definir o escopo do sistema, identificar as funções prioritárias e estabelecer o que entra no primeiro timebox. É o ponto de partida do RAD — a sessão onde se decide <em>o quê</em> será construído, não <em>como</em>. O resultado esperado é um plano de versões com prioridades claras.</p>
+      </div>
+
+      <div class="gloss-card gloss--rad">
+        <div class="gloss-tag">RAD — Sessão</div>
+        <h3 class="gloss-term">JAD</h3>
+        <p class="gloss-full">Joint Application Design</p>
+        <p class="gloss-desc">Sessões colaborativas intensivas onde usuários e desenvolvedores projetam o sistema juntos. O facilitador conduz, o SWAT Team constrói protótipos em tempo real e o usuário valida na hora. Decisões que levariam semanas por e-mail são tomadas em horas. O JAD é o mecanismo central do RAD para reduzir retrabalho: quando o usuário aprova o protótipo na sessão, o desenvolvedor constrói com confiança.</p>
+      </div>
+
+      <div class="gloss-card gloss--rad">
+        <div class="gloss-tag">RAD — Fase</div>
+        <h3 class="gloss-term">Cutover</h3>
+        <p class="gloss-full">Transição para produção</p>
+        <p class="gloss-desc">A fase final de cada versão no RAD: o sistema vai a produção, os usuários são treinados e o sistema legado é desativado ou migrado de forma gradual. Diferente do modelo Cascata — onde a implantação encerra o projeto —, no RAD o Cutover encerra apenas uma versão. O ciclo recomeça imediatamente para a V2, incorporando o feedback e os requisitos que ficaram de fora da versão anterior.</p>
+      </div>
+
+      <div class="gloss-card gloss--rad">
+        <div class="gloss-tag">RAD — Equipe</div>
+        <h3 class="gloss-term">SWAT Team</h3>
+        <p class="gloss-full">Skilled Workers with Advanced Tools</p>
+        <p class="gloss-desc">O núcleo de desenvolvimento do RAD: um time pequeno (4 a 6 pessoas), multifuncional e altamente qualificado. Inclui desenvolvedores experientes, às vezes um analista, e no RAD clássico havia usuários representantes integrados ao time. O SWAT trabalha de forma intensa e focada durante o timebox, sem interrupções externas. É o precursor direto dos squads ágeis modernos.</p>
+      </div>
+
+      <div class="gloss-card gloss--rad">
+        <div class="gloss-tag">RAD — Restrição</div>
+        <h3 class="gloss-term">Timebox</h3>
+        <p class="gloss-full">Janela de tempo fixa para entrega</p>
+        <p class="gloss-desc">Um dos princípios centrais do RAD: o tempo de desenvolvimento é fixo (no RAD clássico, 60 a 90 dias), e o que não couber nesse prazo vai para a próxima versão. No Cascata, o escopo é fixo e o prazo varia. No RAD, é o inverso: o prazo é fixo e o escopo é ajustado. Isso força priorização e evita o comum problema de projetos que se estendem indefinidamente.</p>
+      </div>
+
+      <div class="gloss-card gloss--rad">
+        <div class="gloss-tag">RAD — Ferramenta</div>
+        <h3 class="gloss-term">CASE</h3>
+        <p class="gloss-full">Computer-Aided Software Engineering</p>
+        <p class="gloss-desc">Ferramentas de software que automatizavam parte do processo de desenvolvimento nos anos 1990: geração de código a partir de diagramas, modelagem de banco de dados, documentação automática. No RAD clássico, o SWAT Team usava CASE tools para transformar rapidamente os protótipos das sessões JAD em código funcional. O equivalente moderno são os frameworks como React e Next.js, plataformas low-code, e assistentes de código com IA como GitHub Copilot.</p>
+      </div>
+
+      <div class="gloss-card gloss--agil">
+        <div class="gloss-tag">Ágil — Ciclo</div>
+        <h3 class="gloss-term">Sprint</h3>
+        <p class="gloss-full">Ciclo de desenvolvimento curto e fixo</p>
+        <p class="gloss-desc">Unidade de tempo do desenvolvimento ágil (especialmente no Scrum): um ciclo curto e fixo, geralmente de 1 a 3 semanas, no qual o time seleciona itens do backlog e entrega um incremento funcional. É a evolução direta do timebox do RAD, mas com duração muito menor e com cerimônias estruturadas (planejamento, daily, revisão e retrospectiva). Ao final de cada sprint, algo concreto deve estar pronto para ser demonstrado ou entregue.</p>
+      </div>
+
+      <div class="gloss-card gloss--infra">
+        <div class="gloss-tag">Infraestrutura</div>
+        <h3 class="gloss-term">CI/CD</h3>
+        <p class="gloss-full">Integração Contínua / Entrega Contínua</p>
+        <p class="gloss-desc"><strong>CI (Continuous Integration)</strong>: toda vez que um desenvolvedor envia código, um sistema automático executa testes para garantir que nada quebrou. <strong>CD (Continuous Delivery/Deployment)</strong>: se os testes passam, o código é automaticamente enviado para produção — sem intervenção manual. O <strong>pipeline</strong> é o caminho automatizado que o código percorre: commit → build → testes → staging → produção. É a evolução direta do Cutover do RAD clássico: o que antes era um evento manual e arriscado virou um processo contínuo, rastreável e reversível.</p>
+      </div>
+
+      <div class="gloss-card gloss--infra">
+        <div class="gloss-tag">Infraestrutura</div>
+        <h3 class="gloss-term">Deploy</h3>
+        <p class="gloss-full">Publicação de uma versão do sistema</p>
+        <p class="gloss-desc">O ato de disponibilizar uma nova versão do software para os usuários finais — seja em ambiente de testes (staging) ou em produção. No Cascata, era um evento único e crítico ao final do projeto. No RAD, era o Cutover de cada versão. Com CI/CD moderno, o deploy pode acontecer dezenas de vezes por dia de forma automatizada. Por isso existe a regra não escrita da profissão: <em>nunca faça deploy na sexta à tarde</em> — se algo der errado, o fim de semana será perdido.</p>
+      </div>
+
+      <div class="gloss-card gloss--infra">
+        <div class="gloss-tag">Infraestrutura</div>
+        <h3 class="gloss-term">Pipeline</h3>
+        <p class="gloss-full">Fluxo automatizado de entrega de software</p>
+        <p class="gloss-desc">A sequência automatizada de etapas que o código percorre desde o commit do desenvolvedor até chegar ao usuário: verificação de sintaxe → testes unitários → testes de integração → build do pacote → deploy em staging → aprovação → deploy em produção. Cada etapa é um filtro de qualidade. Se uma etapa falha, o pipeline para e notifica o time. Um pipeline bem configurado é o que permite entregar software com frequência sem abrir mão da qualidade.</p>
+      </div>
+
+      <div class="gloss-card gloss--agil">
+        <div class="gloss-tag">Ágil — Técnica</div>
+        <h3 class="gloss-term">Feature Flag</h3>
+        <p class="gloss-full">Chave de ativação de funcionalidade</p>
+        <p class="gloss-desc">Uma configuração no código que permite ativar ou desativar uma funcionalidade sem fazer um novo deploy. Com feature flags, é possível entregar código de uma funcionalidade em produção mas deixá-la invisível para os usuários — e ativá-la gradualmente (10% dos usuários, depois 50%, depois 100%) para monitorar o impacto antes de um lançamento completo. É diferente de um protótipo (que é uma versão preliminar para validação) e de um MVP (que é a versão mínima funcional lançada para um público real).</p>
+      </div>
+
+      <div class="gloss-card gloss--agil">
+        <div class="gloss-tag">Ágil — Entrega</div>
+        <h3 class="gloss-term">Protótipo</h3>
+        <p class="gloss-full">Versão preliminar para validação</p>
+        <p class="gloss-desc">No RAD, o protótipo é o principal artefato das sessões JAD: uma representação funcional (ou visual) do sistema construída rapidamente para que o usuário possa reagir e validar antes que o código real seja escrito. James Martin (1991) argumentou que usuários não sabem o que precisam até verem algo funcionando — o protótipo resolve isso. Diferente de um MVP (que é um produto real entregue ao mercado), o protótipo é uma ferramenta de comunicação interna entre dev e usuário.</p>
       </div>
 
     </div>

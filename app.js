@@ -181,7 +181,7 @@ const phaseData = {
       m4: {
         num: 'Fase 5',
         title: 'Deploy Contínuo (CI/CD)',
-        desc: 'A grande evolução em relação ao RAD clássico. O deploy não é mais um evento — é um processo contínuo e automatizado. Cada commit validado pode ir a produção automaticamente via pipeline CI/CD. O Nubank faz dezenas de deploys por dia. O que Martin sonhava com o Cutover — virou infraestrutura automática.',
+        desc: 'A grande evolução em relação ao RAD clássico. No RAD original, o Cutover era um evento manual e intenso — a equipe parava tudo para migrar, treinar e implantar. Com CI/CD (Integração Contínua / Entrega Contínua), esse processo vira infraestrutura automatizada: cada alteração de código passa por testes automáticos (CI — Continuous Integration), e se aprovada, é publicada em produção sem intervenção manual (CD — Continuous Delivery/Deployment). O pipeline é o caminho automatizado que o código percorre do desenvolvedor ao usuário final: commit → build → testes → staging → produção. O que antes levava semanas de planejamento agora acontece dezenas de vezes por dia, com rollback instantâneo se algo der errado.',
         activities: ['Pipeline de CI/CD: build → teste → deploy automático', 'Monitoramento em tempo real (Datadog, Sentry, New Relic)', 'Rollback instantâneo se métricas piorarem', 'Feature flags para releases graduais e testes A/B'],
         artifact: { label: 'O que mudou vs. RAD clássico', value: 'Deploy virou processo contínuo automatizado — não mais um evento manual de "transição"' }
       }
@@ -575,9 +575,9 @@ function showResult() {
   let icon, title, msg;
   if (pct === 100)  { icon = '🏆'; title = 'Perfeito!';          msg = 'Acertou tudo! Domínio completo do conteúdo — você está muito bem preparado para a apresentação.'; }
   else if (pct >= 80) { icon = '🎓'; title = 'Muito bem!';        msg = 'Ótimo desempenho. Revise rapidamente os tópicos em que errou para consolidar o aprendizado.'; }
-  else if (pct >= 60) { icon = '👏'; title = 'Bom resultado!';    msg = 'Você compreende os conceitos principais. Vale reforçar os pontos de dúvida no Explorer e nos Modelos.'; }
-  else if (pct >= 40) { icon = '📚'; title = 'Bom começo.';       msg = 'Metade do caminho. Volte ao Explorer e aos Modelos antes de tentar novamente.'; }
-  else               { icon = '🔍'; title = 'Continue estudando.'; msg = 'Explore as seções anteriores — Explorer, Modelos e Comparativo — antes de tentar de novo.'; }
+  else if (pct >= 60) { icon = '👏'; title = 'Bom resultado!';    msg = 'Você compreende os conceitos principais. Vale reforçar os pontos de dúvida nos Modelos, nas Equipes e no Comparativo.'; }
+  else if (pct >= 40) { icon = '📚'; title = 'Bom começo.';       msg = 'Metade do caminho. Volte aos Modelos e ao Comparativo antes de tentar novamente.'; }
+  else               { icon = '🔍'; title = 'Continue estudando.'; msg = 'Explore as seções anteriores — Modelos, Equipes e Comparativo — antes de tentar de novo.'; }
 
   document.getElementById('result-icon').textContent = icon;
   document.getElementById('result-title').textContent = title;
@@ -626,7 +626,7 @@ renderQuestion();
 if (window.innerWidth <= 768) {
   const mobileNav = document.createElement('div');
   mobileNav.className = 'mobile-nav';
-  const sections = [['hero','Início'],['explorer','Explorer'],['models','Modelos'],['compare','Comparar'],['quiz','Quiz'],['memes','Memes']];
+  const sections = [['hero','Início'],['models','Modelos'],['equipes','Equipes RAD'],['compare','Comparar'],['quiz','Quiz'],['glossario','Glossário'],['memes','Memes']];
   sections.forEach(([id, label]) => {
     const btn = document.createElement('button');
     btn.className = 'nav-tab' + (id === 'hero' ? ' active' : '');
