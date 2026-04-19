@@ -240,8 +240,8 @@
   <div class="container container--wide">
     <div class="section-header">
       <div class="section-label">Modelos de Processo</div>
-      <h2>Cascata, RAD e Ágil/Scrum</h2>
-      <p>Selecione um modelo para percorrer suas fases interativamente. Clique em cada fase para ver detalhes.</p>
+      <h2>Cascata, RAD e RAD + Ágil</h2>
+      <p>Selecione um modelo para percorrer suas fases. O <strong>RAD + Ágil</strong> mostra como aplicar princípios ágeis ao RAD — mantendo a estrutura de fases, mas com as práticas de hoje.</p>
     </div>
 
     <!-- Model selector -->
@@ -254,9 +254,9 @@
         <div class="model-tab-dot dot--teal"></div>
         RAD
       </button>
-      <button class="model-tab" role="tab" aria-selected="false" data-model="scrum">
-        <div class="model-tab-dot dot--purple"></div>
-        Ágil / Scrum
+      <button class="model-tab" role="tab" aria-selected="false" data-model="radagil">
+        <div class="model-tab-dot dot--orange"></div>
+        RAD + Ágil
       </button>
     </div>
 
@@ -357,47 +357,39 @@
       </div>
     </div>
 
-    <!-- ── SCRUM ── -->
-    <div class="model-view" id="model-scrum">
+    <!-- ── RAD MODERNO ── -->
+    <div class="model-view" id="model-radagil">
       <div class="model-layout">
         <div class="flow-column">
-          <div class="flow-header flow-header--purple">
-            <h3>Ciclo Scrum</h3>
-            <span>Ágil · Sprints Iterativos</span>
+          <div class="flow-header flow-header--orange">
+            <h3>RAD + Ágil</h3>
+            <span>RAD clássico + princípios ágeis · Como o RAD é hoje</span>
           </div>
-          <div class="flow-phases" id="phases-scrum">
-            <div class="flow-phase" data-phase="s0" data-model-key="scrum">
-              <div class="phase-node pn--purple"><span class="pn-num">PO</span> Product Backlog</div>
+          <div class="flow-phases" id="phases-radagil">
+            <div class="flow-phase" data-phase="m0" data-model-key="radagil">
+              <div class="phase-node pn--orange"><span class="pn-num">1</span> Discovery &amp; Escopo</div>
               <div class="phase-arrow">↓</div>
             </div>
-            <div class="flow-phase" data-phase="s1" data-model-key="scrum">
-              <div class="phase-node pn--purple"><span class="pn-num">SM</span> Sprint Planning</div>
+            <div class="flow-phase rad-loop-start" data-phase="m1" data-model-key="radagil">
+              <div class="loop-badge loop-badge--orange">↺ Sprint / Timebox 1–3 semanas</div>
+              <div class="phase-node pn--orange"><span class="pn-num">2</span> Design Colaborativo</div>
+              <div class="phase-arrow">⇄</div>
+            </div>
+            <div class="flow-phase rad-loop-end" data-phase="m2" data-model-key="radagil">
+              <div class="phase-node pn--orange"><span class="pn-num">3</span> Construção Incremental</div>
               <div class="phase-arrow">↓</div>
             </div>
-            <div class="flow-phase scrum-sprint" data-phase="s2" data-model-key="scrum">
-              <div class="loop-badge loop-badge--purple">Sprint 1–4 semanas</div>
-              <div class="sprint-inner">
-                <div class="sprint-item">Daily Scrum (15 min)</div>
-                <div class="sprint-item">Desenvolvimento</div>
-                <div class="sprint-item">Testes</div>
-              </div>
+            <div class="flow-phase" data-phase="m3" data-model-key="radagil">
+              <div class="phase-node pn--orange"><span class="pn-num">4</span> Review &amp; Retrospectiva</div>
               <div class="phase-arrow">↓</div>
             </div>
-            <div class="flow-phase" data-phase="s3" data-model-key="scrum">
-              <div class="phase-node pn--purple"><span class="pn-num">✓</span> Sprint Review</div>
-              <div class="phase-arrow">↓</div>
-            </div>
-            <div class="flow-phase" data-phase="s4" data-model-key="scrum">
-              <div class="phase-node pn--purple"><span class="pn-num">▲</span> Incremento Entregável</div>
-              <div class="phase-arrow">↓</div>
-            </div>
-            <div class="flow-phase" data-phase="s5" data-model-key="scrum">
-              <div class="phase-node pn--purple"><span class="pn-num">↺</span> Retrospectiva</div>
+            <div class="flow-phase" data-phase="m4" data-model-key="radagil">
+              <div class="phase-node pn--orange"><span class="pn-num">5</span> Deploy Contínuo (CI/CD)</div>
             </div>
           </div>
-          <div class="flow-badge" style="--badge-color: var(--color-purple)">Incrementos a cada 1–4 semanas</div>
+          <div class="flow-badge" style="--badge-color: var(--color-orange)">Entregas contínuas · Ciclos curtos · Ainda é RAD</div>
         </div>
-        <div class="detail-panel" id="detail-scrum">
+        <div class="detail-panel" id="detail-radagil">
           <div class="detail-placeholder">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-text-faint)" stroke-width="1.5"><path d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5"/></svg>
             <p>Clique em uma fase ao lado para ver os detalhes</p>
@@ -405,10 +397,10 @@
         </div>
       </div>
       <div class="model-summary">
-        <div class="summary-chip"><strong>Origem:</strong> Sutherland &amp; Schwaber, 1995</div>
-        <div class="summary-chip"><strong>Ideal para:</strong> Requisitos voláteis, startups, produtos digitais</div>
-        <div class="summary-chip"><strong>Papéis:</strong> PO, Scrum Master, Dev Team</div>
-        <div class="summary-chip"><strong>Entrega:</strong> A cada sprint (1–4 sem.)</div>
+        <div class="summary-chip"><strong>Base:</strong> RAD (Martin, 1991) + Manifesto Ágil (2001)</div>
+        <div class="summary-chip"><strong>Ainda é RAD porque:</strong> fases, timebox, protótipos, usuário no centro</div>
+        <div class="summary-chip"><strong>Diferença do RAD clássico:</strong> sprints curtos, CI/CD, retrospectiva</div>
+        <div class="summary-chip"><strong>Usado por:</strong> Nubank, Spotify, GitHub, Notion, Linear</div>
       </div>
     </div>
 
@@ -420,15 +412,15 @@
   <div class="container container--wide">
     <div class="section-header">
       <div class="section-label">Comparativo</div>
-      <h2>Cascata × RAD × Ágil</h2>
-      <p>Passe o mouse sobre uma linha para destacar o critério. Clique no cabeçalho de uma coluna para filtrar e destacar um modelo.</p>
+      <h2>Cascata × RAD × RAD + Ágil</h2>
+      <p>Cascata e RAD como foram concebidos. O RAD + Ágil mostra como o RAD sobreviveu e evoluiu — sem deixar de ser RAD.</p>
     </div>
 
     <div class="table-controls">
       <button class="filter-btn active" data-col="all">Todos</button>
       <button class="filter-btn" data-col="cascata">Cascata</button>
       <button class="filter-btn" data-col="rad">RAD</button>
-      <button class="filter-btn" data-col="agil">Ágil</button>
+      <button class="filter-btn" data-col="agil">RAD + Ágil</button>
     </div>
 
     <div class="table-wrapper">
@@ -438,7 +430,7 @@
             <th scope="col">Critério</th>
             <th scope="col" class="th-cascata col-cascata">Cascata</th>
             <th scope="col" class="th-rad col-rad">RAD</th>
-            <th scope="col" class="th-agil col-agil">Ágil / Scrum</th>
+            <th scope="col" class="th-agil col-agil">RAD + Ágil</th>
           </tr>
         </thead>
         <tbody id="compare-body">
@@ -446,73 +438,73 @@
             <td class="criterion">Abordagem geral</td>
             <td class="col-cascata">Linear e sequencial; cada fase conclui antes de iniciar a próxima</td>
             <td class="col-rad">Iterativa por componentes; usuário participa ativamente das iterações</td>
-            <td class="col-agil">Iterativa e incremental; entrega frequente de software funcionando</td>
+            <td class="col-agil">Iterativa e incremental; mesma lógica do RAD mas com sprints curtos de 1–3 semanas e entrega contínua</td>
           </tr>
           <tr class="compare-row" data-row="1">
             <td class="criterion">Gestão de requisitos</td>
             <td class="col-cascata">Fixos e totalmente especificados antes do desenvolvimento</td>
             <td class="col-rad">Priorizados em workshops JRP; podem evoluir por versão</td>
-            <td class="col-agil">Dinâmicos; gerenciados no Product Backlog e priorizados a cada Sprint</td>
+            <td class="col-agil">Gerenciados em backlog priorizado; refinados a cada sprint — ainda parte do processo RAD</td>
           </tr>
           <tr class="compare-row" data-row="2">
             <td class="criterion">Envolvimento do usuário</td>
             <td class="col-cascata">Concentrado na fase de levantamento; ausente durante o desenvolvimento</td>
             <td class="col-rad">Intenso nas sessões JAD/JRP e na validação de protótipos</td>
-            <td class="col-agil">Contínuo; o Product Owner representa o negócio ao longo de todos os sprints</td>
+            <td class="col-agil">Contínuo; o usuário ou PO valida a cada sprint — versão moderna das sessões JAD</td>
           </tr>
           <tr class="compare-row" data-row="3">
             <td class="criterion">Mecanismo de validação</td>
             <td class="col-cascata">Testes formais ao final do ciclo de desenvolvimento</td>
             <td class="col-rad">Protótipos evolutivos validados em sessões com usuários</td>
-            <td class="col-agil">Spike (PoC técnico), MVP ou Feature Flag; validação contínua e empírica</td>
+            <td class="col-agil">Protótipos + testes automatizados + feature flags — validação empírica e contínua</td>
           </tr>
           <tr class="compare-row" data-row="4">
             <td class="criterion">Ciclo de entrega</td>
             <td class="col-cascata">Entrega única ao final do projeto (meses ou anos)</td>
             <td class="col-rad">Entregas por versão (V1, V2…) em timeboxes de 60–90 dias</td>
-            <td class="col-agil">Incrementos potencialmente entregáveis a cada 1–4 semanas</td>
+            <td class="col-agil">Entregas contínuas via CI/CD; sprints de 1–3 semanas substituem o timebox longo</td>
           </tr>
           <tr class="compare-row" data-row="5">
             <td class="criterion">Adaptação a mudanças</td>
             <td class="col-cascata">Baixa; mudanças geram retrabalho custoso</td>
             <td class="col-rad">Moderada; mudanças entre versões são admitidas</td>
-            <td class="col-agil">Alta; mudanças são esperadas e absorvidas no próximo sprint</td>
+            <td class="col-agil">Alta; mudanças absorvidas no próximo sprint — o timebox é curto o suficiente para corrigir o rumo</td>
           </tr>
           <tr class="compare-row" data-row="6">
             <td class="criterion">Documentação</td>
             <td class="col-cascata">Extensa e antecipada; é pré-requisito para avançar de fase</td>
             <td class="col-rad">Moderada; foco em protótipos funcionais e diagramas essenciais</td>
-            <td class="col-agil">Mínima necessária; código e software funcionando são preferidos</td>
+            <td class="col-agil">Mínima necessária; código funcionando, testes e ADRs substituem documentos formais</td>
           </tr>
           <tr class="compare-row" data-row="7">
             <td class="criterion">Estrutura da equipe</td>
             <td class="col-cascata">Funcional e hierárquica; papéis bem definidos por fase</td>
             <td class="col-rad">Pequenas equipes multifuncionais; usuários integrados no processo</td>
-            <td class="col-agil">Auto-organizada; PO, Scrum Master e Dev Team (5–9 pessoas)</td>
+            <td class="col-agil">Squads autônomos e multifuncionais (modelo Spotify); herdados diretamente do SWAT Team do RAD</td>
           </tr>
           <tr class="compare-row" data-row="8">
             <td class="criterion">Riscos principais</td>
             <td class="col-cascata">Sistema entregue sem valor real; feedback tardio; obsolescência</td>
             <td class="col-rad">Escopo expansivo; dependência da disponibilidade do usuário</td>
-            <td class="col-agil">Dívida técnica; dificuldade de escalar; visão de produto fragmentada</td>
+            <td class="col-agil">Dívida técnica acumulada; desalinhamento de produto se o PO não estiver engajado</td>
           </tr>
           <tr class="compare-row" data-row="9">
             <td class="criterion">Contextos ideais</td>
             <td class="col-cascata">Sistemas críticos com requisitos estáveis (defesa, aeroespacial)</td>
             <td class="col-rad">Sistemas corporativos com usuário disponível (ERP, sistemas internos)</td>
-            <td class="col-agil">Produtos digitais, startups, aplicativos com requisitos voláteis</td>
+            <td class="col-agil">Produtos digitais modernos: fintechs, SaaS, apps — qualquer produto que precise evoluir com o mercado</td>
           </tr>
           <tr class="compare-row" data-row="10">
             <td class="criterion">Exemplos reais</td>
             <td class="col-cascata">Sistema de controle de voo da NASA; projetos licitatórios governamentais</td>
             <td class="col-rad">Sistemas de gestão bancária (anos 1990–2000); ERPs legados</td>
-            <td class="col-agil">Spotify, Nubank, GitHub — qualquer produto com releases frequentes</td>
+            <td class="col-agil">Nubank, Spotify, GitHub, Notion, Linear — entregam a cada dia ou semana com squads autônomos</td>
           </tr>
           <tr class="compare-row" data-row="11">
             <td class="criterion">Legado histórico</td>
             <td class="col-cascata">Base de toda engenharia de software; ainda exigido em contratos regulados</td>
             <td class="col-rad">Ponte entre Cascata e Ágil; introduziu JAD, prototipação e timeboxing</td>
-            <td class="col-agil">Dominante na indústria atual; influência do RAD é reconhecida no Manifesto</td>
+            <td class="col-agil">É o RAD vivo: os princípios de Martin (1991) sobreviveram absorvendo os frameworks ágeis</td>
           </tr>
           <tr class="compare-row" data-row="12">
             <td class="criterion">Custo de mudança</td>

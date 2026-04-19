@@ -970,3 +970,10 @@ p { max-width: 72ch; }
 @media (max-width: 640px) {
   .memes-grid { grid-template-columns: 1fr; }
 }
+
+/* ── RAD + Ágil — cores laranja ─────────────────────────────────────── */
+.dot--orange          { background: var(--color-orange); }
+.flow-header--orange  { background: var(--color-orange-soft); color: var(--color-orange); }
+.pn--orange           { background: var(--color-orange-soft); color: var(--color-orange); border: 1.5px solid var(--color-orange); }
+.pn--orange:hover, .flow-phase:hover .pn--orange { background: var(--color-orange); color: #fff; }
+.loop-badge--orange   { color: var(--color-orange); background: var(--color-orange-soft); border: 1px dashed var(--color-orange); }

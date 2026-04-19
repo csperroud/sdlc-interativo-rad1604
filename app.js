@@ -147,50 +147,43 @@ const phaseData = {
       }
     }
   },
-  scrum: {
-    color: 'var(--color-purple)',
+  radagil: {
+    color: 'var(--color-orange)',
     phases: {
-      s0: {
-        num: 'Artefato — PO',
-        title: 'Product Backlog',
-        desc: 'Lista ordenada de tudo que é necessário para o produto. É de responsabilidade exclusiva do Product Owner (PO), que prioriza itens com base no valor de negócio. Está em constante evolução ao longo do projeto.',
-        activities: ['Criação e refinamento contínuo de User Stories', 'Priorização por valor de negócio (PO)', 'Estimativas de esforço pelo Dev Team', 'Decomposição de épicos em histórias menores'],
-        artifact: { label: 'Formato típico', value: 'User Stories: "Como [usuário], quero [função] para [benefício]"' }
+      m0: {
+        num: 'Fase 1',
+        title: 'Discovery & Escopo',
+        desc: 'Versão moderna do Planejamento de Requisitos do RAD clássico. Em vez de workshops JRP de dias, equipes fazem sessões de Discovery curtas para mapear o problema, definir o escopo do primeiro ciclo e priorizar o backlog inicial. O DNA é o mesmo de Martin (1991): usuário no centro, escopo priorizado — não exaustivo.',
+        activities: ['Sessões de Discovery com usuários reais (entrevistas, pesquisas)', 'Definição do escopo mínimo para entregar valor', 'Priorização do backlog com base em impacto × esforço', 'Alinhamento de stakeholders sobre o que entra no primeiro ciclo'],
+        artifact: { label: 'Herança do RAD', value: 'Planejamento de Requisitos (Martin, 1991) — agora em formato curto de discovery' }
       },
-      s1: {
-        num: 'Cerimônia',
-        title: 'Sprint Planning',
-        desc: 'Reunião no início de cada Sprint onde o time seleciona itens do Product Backlog para o Sprint Backlog. O Dev Team define como o trabalho será executado, estimando as tarefas necessárias.',
-        activities: ['Seleção de histórias para o sprint (capacidade do time)', 'Criação do Sprint Goal — objetivo do sprint', 'Decomposição de histórias em tarefas técnicas', 'Definição de "Pronto" (Definition of Done)'],
-        artifact: { label: 'Duração', value: 'Máx. 8 horas para um sprint de 4 semanas (proporcional)' }
+      m1: {
+        num: 'Fase 2',
+        title: 'Design Colaborativo',
+        desc: 'Versão moderna das sessões JAD. Em vez de workshops presenciais longos, designers e devs co-criam protótipos em ferramentas como Figma em tempo real, validando com usuários rapidamente. O princípio de Martin — "usuários não sabem o que querem até ver" — continua sendo a base.',
+        activities: ['Wireframes e protótipos de alta fidelidade (Figma, Sketch)', 'Testes de usabilidade com usuários reais em 48–72h', 'Design System compartilhado para acelerar produção', 'Definição de critérios de aceite por funcionalidade'],
+        artifact: { label: 'Herança do RAD', value: 'Sessões JAD (Martin, 1991) — agora via ferramentas colaborativas e testes rápidos' }
       },
-      s2: {
-        num: 'Coração do Scrum',
-        title: 'Sprint (1–4 semanas)',
-        desc: 'O timebox central do Scrum. Nenhuma mudança é permitida que coloque o Sprint Goal em risco. O Dev Team se auto-organiza para entregar o incremento acordado. Inclui Daily Scrum, desenvolvimento e testes contínuos.',
-        activities: ['Daily Scrum: sincronização diária de 15 minutos', 'Desenvolvimento das histórias selecionadas', 'Testes automatizados e manuais contínuos', 'Atualização do Sprint Backlog e Burndown'],
-        artifact: { label: 'Princípio', value: 'Escopo fixo, prazo fixo. Qualidade não é negociável.' }
+      m2: {
+        num: 'Fase 3',
+        title: 'Construção Incremental',
+        desc: 'O coração do RAD + Ágil. Em vez de timeboxes de 60–90 dias, a construção acontece em sprints curtos de 1–3 semanas. As ferramentas CASE foram substituídas por frameworks modernos (React, Next.js), plataformas low-code e IAs de código como GitHub Copilot. A velocidade que Martin queria com CASE — agora existe de verdade.',
+        activities: ['Desenvolvimento em sprints curtos (1–3 semanas)', 'Testes automatizados escritos junto com o código', 'Code review entre pares (pull requests)', 'Feature flags para liberar funcionalidades gradualmente'],
+        artifact: { label: 'Herança do RAD', value: 'Construção + CASE (Martin, 1991) — agora via frameworks modernos, low-code e Copilot' }
       },
-      s3: {
-        num: 'Cerimônia',
-        title: 'Sprint Review',
-        desc: 'O time demonstra o incremento entregue aos stakeholders. É uma reunião de inspeção e adaptação do Product Backlog — não uma apresentação formal. Stakeholders dão feedback que orienta o próximo sprint.',
-        activities: ['Demonstração do incremento funcionando', 'Feedback dos stakeholders e clientes', 'Atualização do Product Backlog conforme feedback', 'Discussão sobre o que foi e o que não foi entregue'],
-        artifact: { label: 'Duração', value: 'Máx. 4 horas para um sprint de 4 semanas' }
+      m3: {
+        num: 'Fase 4',
+        title: 'Review & Retrospectiva',
+        desc: 'Combina o Cutover do RAD com as cerimônias ágeis. O time demonstra o incremento para stakeholders, coleta feedback real e avalia o que funcionou no processo. Cada ciclo alimenta o próximo — exatamente como o RAD clássico alimentava a V2 com o aprendizado da V1.',
+        activities: ['Demo para stakeholders: incremento funcionando em staging ou produção', 'Coleta de feedback quantitativo (analytics, NPS) e qualitativo', 'Retrospectiva interna: o que melhorar no próximo ciclo?', 'Atualização do backlog com novos requisitos e prioridades'],
+        artifact: { label: 'Herança do RAD', value: 'Cutover iterativo (Martin, 1991) — agora com retrospectiva estruturada e métricas de produto' }
       },
-      s4: {
-        num: 'Artefato',
-        title: 'Incremento Entregável',
-        desc: 'Resultado concreto do sprint: software funcionando, testado e pronto para ser entregue em produção (se o PO decidir). Cada incremento deve atender à Definition of Done definida pelo time.',
-        activities: ['Software funcionando e testado', 'Atende à Definition of Done (DoD)', 'Integrado a incrementos anteriores', 'Potencialmente entregável em produção'],
-        artifact: { label: 'Conceito-chave', value: 'Não é protótipo — é software potencialmente entregável' }
-      },
-      s5: {
-        num: 'Cerimônia',
-        title: 'Retrospectiva',
-        desc: 'O Scrum Master facilita uma reunião de melhoria contínua: o time inspeciona seu próprio processo (pessoas, relações, ferramentas) e define ações concretas para o próximo sprint.',
-        activities: ['O que foi bem no sprint? (manter)', 'O que pode melhorar? (identificar)', 'Definição de ações concretas para o próximo sprint', 'Revisão das ações da retrospectiva anterior'],
-        artifact: { label: 'Duração', value: 'Máx. 3 horas para um sprint de 4 semanas' }
+      m4: {
+        num: 'Fase 5',
+        title: 'Deploy Contínuo (CI/CD)',
+        desc: 'A grande evolução em relação ao RAD clássico. O deploy não é mais um evento — é um processo contínuo e automatizado. Cada commit validado pode ir a produção automaticamente via pipeline CI/CD. O Nubank faz dezenas de deploys por dia. O que Martin sonhava com o Cutover — virou infraestrutura automática.',
+        activities: ['Pipeline de CI/CD: build → teste → deploy automático', 'Monitoramento em tempo real (Datadog, Sentry, New Relic)', 'Rollback instantâneo se métricas piorarem', 'Feature flags para releases graduais e testes A/B'],
+        artifact: { label: 'O que mudou vs. RAD clássico', value: 'Deploy virou processo contínuo automatizado — não mais um evento manual de "transição"' }
       }
     }
   }
