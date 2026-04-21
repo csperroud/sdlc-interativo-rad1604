@@ -651,6 +651,7 @@ p { max-width: 72ch; }
   white-space: nowrap;
 }
 .th-cascata { color: var(--color-blue); }
+.th-vmodel  { color: #b45309; }
 .th-rad     { color: var(--color-primary); }
 .th-agil    { color: var(--color-purple); }
 
@@ -672,16 +673,18 @@ p { max-width: 72ch; }
 .compare-row:hover td { background: var(--color-surface-offset); }
 .compare-row:hover .criterion { background: var(--color-surface-offset); }
 .compare-table tbody tr:last-child td { border-bottom: none; }
-.col-cascata, .col-rad, .col-agil {
+.col-cascata, .col-vmodel, .col-rad, .col-agil {
   color: var(--color-text-muted);
   transition: all var(--transition);
 }
 
 /* Filter highlight */
 .filter-active .col-cascata.dimmed,
+.filter-active .col-vmodel.dimmed,
 .filter-active .col-rad.dimmed,
 .filter-active .col-agil.dimmed { opacity: 0.35; }
 .filter-active .col-cascata.highlighted,
+.filter-active .col-vmodel.highlighted,
 .filter-active .col-rad.highlighted,
 .filter-active .col-agil.highlighted { opacity: 1; color: var(--color-text); }
 
@@ -818,7 +821,23 @@ p { max-width: 72ch; }
 @media (max-width: 768px) {
   .site-header { height: auto; padding: var(--space-3) 0; }
   .header-inner { flex-wrap: wrap; row-gap: var(--space-2); }
-  .mobile-nav { display: flex; gap: var(--space-1); flex-wrap: nowrap; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: var(--space-2); scrollbar-width: none; }
+  .mobile-nav-wrapper { position: relative; width: 100%; }
+  .mobile-nav-wrapper::after {
+    content: '›';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: var(--space-2);
+    width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: var(--color-text-muted);
+    background: linear-gradient(to right, transparent, var(--color-bg) 60%);
+    pointer-events: none;
+  }
+  .mobile-nav { display: flex; gap: var(--space-1); flex-wrap: nowrap; width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: var(--space-2); scrollbar-width: none; padding-right: 36px; }
   .mobile-nav::-webkit-scrollbar { display: none; }
   .mobile-nav .nav-tab { flex-shrink: 0; }
   .mobile-nav .nav-tab { display: block; font-size: var(--text-xs); padding: var(--space-2) var(--space-3); }

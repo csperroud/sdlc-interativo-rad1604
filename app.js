@@ -636,6 +636,8 @@ renderQuestion();
    MOBILE NAV — inject below header
 ══════════════════════════════════════════════════════════════════════ */
 if (window.innerWidth <= 768) {
+  const mobileNavWrapper = document.createElement('div');
+  mobileNavWrapper.className = 'mobile-nav-wrapper';
   const mobileNav = document.createElement('div');
   mobileNav.className = 'mobile-nav';
   const sections = [['hero','Início'],['models','Modelos'],['compare','Comparar'],['quiz','Quiz'],['glossario','Glossário'],['memes','Memes']];
@@ -647,7 +649,8 @@ if (window.innerWidth <= 768) {
     btn.addEventListener('click', () => navigateTo(id));
     mobileNav.appendChild(btn);
   });
-  document.querySelector('.header-inner')?.appendChild(mobileNav);
+  mobileNavWrapper.appendChild(mobileNav);
+  document.querySelector('.header-inner')?.appendChild(mobileNavWrapper);
 }
 
 /* ══════════════════════════════════════════════════════════════════════
