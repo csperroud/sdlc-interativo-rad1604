@@ -133,17 +133,17 @@ const phaseData = {
       },
       r2: {
         num: 'Fase 3',
-        title: 'Construção (CASE)',
-        desc: 'O SWAT Team utiliza ferramentas CASE (Computer-Aided Software Engineering) para acelerar a geração de código a partir dos protótipos aprovados. A fase de construção e design ocorrem em paralelo, iterando até a aprovação.',
-        activities: ['Geração de código com ferramentas CASE', 'Integração com componentes e sistemas legados', 'Testes contínuos durante a construção', 'Iteração entre design e construção até aprovação'],
-        artifact: { label: 'Ferramentas', value: 'CASE tools / Geradores de código / IDEs' }
+        title: 'Construção Rápida',
+        desc: 'O SWAT Team converte os protótipos aprovados nas sessões JAD em código funcional. A construção é iterativa: subequipes produzem módulos em ciclos curtos de duas a três semanas, revisados com os usuários. O resultado percorre a cadeia P1 → P2 → Pn → alfa → beta → Release Candidate, até a aprovação para o Cutover.',
+        activities: ['Subequipes constroem módulos em ciclos curtos (2–3 semanas)', 'Integração incremental — sem lacuna de integração ao final', 'Testes contínuos durante cada iteração', 'Usuário valida versão alfa e beta antes do Cutover'],
+        artifact: { label: 'Versionamento', value: 'P1 → P2 → Pn (protótipos) → Alfa → Beta → RC → 1.0' }
       },
       r3: {
         num: 'Fase 4',
         title: 'Cutover (Transição)',
-        desc: 'A fase de transição engloba os testes finais de integração, treinamento dos usuários na versão entregue e implantação em produção. Ao contrário do Cascata, esta é apenas uma versão — o timebox reinicia para V2.',
-        activities: ['Testes finais de integração e aceitação', 'Treinamento dos usuários na versão entregue', 'Implantação em produção', 'Início do planejamento para a próxima versão (V2)'],
-        artifact: { label: 'Diferencial RAD', value: 'Esta é uma versão — o ciclo recomeça para V2, V3…' }
+        desc: 'A fase de transição engloba os testes finais de aceitação (UAT), migração de dados do sistema legado, treinamento dos usuários e implantação — frequentemente em operação paralela com o sistema antigo (parallel run). Diferente do Cascata, o Cutover encerra apenas um timebox. O ciclo recomeça imediatamente, incorporando o feedback e os requisitos que ficaram de fora.',
+        activities: ['Testes de aceitação pelo usuário (UAT)', 'Migração de dados do sistema legado', 'Parallel run: sistema novo e antigo em operação simultânea', 'Treinamento intensivo dos usuários finais'],
+        artifact: { label: 'Diferencial RAD', value: 'O Cutover encerra o timebox atual — o próximo timebox começa imediatamente com o aprendizado acumulado' }
       }
     }
   },
@@ -169,12 +169,12 @@ const phaseData = {
         title: 'Construção Incremental',
         desc: 'O coração do RAD + Ágil. Em vez de timeboxes de 60–90 dias, a construção acontece em sprints curtos de 1–3 semanas. As ferramentas CASE foram substituídas por frameworks modernos (React, Next.js), plataformas low-code e IAs de código como GitHub Copilot. A velocidade que Martin queria com CASE — agora existe de verdade.',
         activities: ['Desenvolvimento em sprints curtos (1–3 semanas)', 'Testes automatizados escritos junto com o código', 'Code review entre pares (pull requests)', 'Feature flags para liberar funcionalidades gradualmente'],
-        artifact: { label: 'Herança do RAD', value: 'Construção + CASE (Martin, 1991) — agora via frameworks modernos, low-code e Copilot' }
+        artifact: { label: 'Herança do RAD', value: 'Construção iterativa (Martin, 1991) — velocidade que a prototipagem evolutiva prometia, agora entregue por frameworks modernos' }
       },
       m3: {
         num: 'Fase 4',
         title: 'Review & Retrospectiva',
-        desc: 'Combina o Cutover do RAD com as cerimônias ágeis. O time demonstra o incremento para stakeholders, coleta feedback real e avalia o que funcionou no processo. Cada ciclo alimenta o próximo — exatamente como o RAD clássico alimentava a V2 com o aprendizado da V1.',
+        desc: 'Combina o Cutover do RAD com as cerimônias ágeis. O time demonstra o incremento para stakeholders, coleta feedback real e avalia o que funcionou no processo. Cada ciclo alimenta o próximo — exatamente como o Cutover do RAD clássico alimentava o próximo timebox com o aprendizado do anterior.',
         activities: ['Demo para stakeholders: incremento funcionando em staging ou produção', 'Coleta de feedback quantitativo (analytics, NPS) e qualitativo', 'Retrospectiva interna: o que melhorar no próximo ciclo?', 'Atualização do backlog com novos requisitos e prioridades'],
         artifact: { label: 'Herança do RAD', value: 'Cutover iterativo (Martin, 1991) — agora com retrospectiva estruturada e métricas de produto' }
       },
@@ -449,7 +449,7 @@ const QUIZ = [
       'Nessa fase, o cliente é excluído do processo até a entrega final'
     ],
     correct: 2,
-    feedback: 'Na Construção, o SWAT Team transforma os protótipos validados em um sistema funcional, utilizando ferramentas CASE para acelerar a geração de código. O usuário permanece envolvido para identificar ajustes e confirmar que o resultado atende às expectativas. As fases 2 e 3 frequentemente se sobrepõem em ciclos iterativos até a aprovação.'
+    feedback: 'Na Construção, o SWAT Team transforma os protótipos validados em um sistema funcional, com o usuário ainda presente para validar os incrementos. O usuário permanece envolvido para identificar ajustes e confirmar que o resultado atende às expectativas. As fases 2 e 3 frequentemente se sobrepõem em ciclos iterativos até a aprovação.'
   },
   {
     tag: 'RAD — Fase 4: Cutover',
