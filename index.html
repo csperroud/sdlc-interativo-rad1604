@@ -29,7 +29,8 @@
         <button class="nav-tab active" data-section="hero">Início</button>
         <button class="nav-tab" data-section="models">Modelos</button>
         <button class="nav-tab" data-section="compare">Comparativo</button>
-        <button class="nav-tab" data-section="quiz">Quiz</button>
+        <button class="nav-tab" data-section="versioning">Versioning</button>
+      <button class="nav-tab" data-section="quiz">Quiz</button>
         <button class="nav-tab" data-section="glossario">Glossário</button>
       </nav>
       <div class="nav-scroll-hint" aria-hidden="true">
@@ -527,6 +528,152 @@
 
 <!-- ══ FOOTER ══════════════════════════════════════════════════════════ -->
 <!-- ══ MEMES ══════════════════════════════════════════════════════════════ -->
+
+<!-- ══ SECTION: VERSIONAMENTO SEMÂNTICO ════════════════════════════ -->
+<section id="versioning" class="section section--versioning">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">Boas práticas</div>
+      <h2>Versionamento Semântico</h2>
+      <p>Como os projetos comunicam o que mudou em cada entrega — e como Cascata, RAD e RAD + Ágil se relacionam com esse padrão.</p>
+    </div>
+
+    <!-- SEMVER CARDS -->
+    <div class="semver-display">
+      <div class="semver-number semver--major">2</div>
+      <div class="semver-dot">.</div>
+      <div class="semver-number semver--minor">4</div>
+      <div class="semver-dot">.</div>
+      <div class="semver-number semver--patch">1</div>
+    </div>
+    <div class="semver-labels">
+      <span class="semver-label semver-label--major">MAJOR</span>
+      <span class="semver-label semver-label--minor">minor</span>
+      <span class="semver-label semver-label--patch">patch</span>
+    </div>
+
+    <div class="semver-cards">
+      <div class="semver-card semver-card--major">
+        <div class="semver-card-header">
+          <span class="semver-badge semver-badge--major">MAJOR</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        </div>
+        <p>Mudança grande que <strong>pode quebrar compatibilidade</strong> com versões anteriores. Quando você sobe o MAJOR, os outros dois números voltam a zero.</p>
+        <div class="semver-example">v1.0.0 → v2.0.0</div>
+        <p class="semver-usecase">Refatoração completa do sistema, mudança de arquitetura ou remoção de funcionalidades existentes.</p>
+      </div>
+
+      <div class="semver-card semver-card--minor">
+        <div class="semver-card-header">
+          <span class="semver-badge semver-badge--minor">minor</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <p>Nova funcionalidade adicionada de forma <strong>compatível com a versão anterior</strong>. Nada que existia deixa de funcionar.</p>
+        <div class="semver-example">v1.0.0 → v1.1.0</div>
+        <p class="semver-usecase">3 novas features adicionadas, novo módulo de relatórios, nova integração com sistema externo.</p>
+      </div>
+
+      <div class="semver-card semver-card--patch">
+        <div class="semver-card-header">
+          <span class="semver-badge semver-badge--patch">patch</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <p><strong>Correção de bug</strong> sem nenhuma feature nova. O sistema se comporta igual ao anterior, mas com menos erros.</p>
+        <div class="semver-example">v1.1.0 → v1.1.1</div>
+        <p class="semver-usecase">5 bugs corrigidos, falha de segurança corrigida, erro de cálculo em relatório resolvido.</p>
+      </div>
+    </div>
+
+    <!-- COMPARATIVO DE VERSIONAMENTO -->
+    <div class="section-header" style="margin-top: 3rem;">
+      <h3 style="font-size: 1.3rem;">Como cada modelo entrega versões</h3>
+      <p>A mesma lógica MAJOR.minor.patch se manifesta de formas muito diferentes dependendo do modelo de desenvolvimento.</p>
+    </div>
+
+    <div class="version-compare-grid">
+
+      <div class="version-model version-model--cascata">
+        <div class="version-model-header">
+          <span class="version-model-tag">Cascata</span>
+          <div class="version-model-typical">Versionamento típico: <strong>v1.0.0</strong></div>
+        </div>
+        <div class="version-timeline">
+          <div class="vtl-item">
+            <div class="vtl-phases">Requisitos → Análise → Design → Implementação → Testes → Implantação</div>
+            <div class="vtl-release vtl-release--major">🚀 v1.0.0 — entrega única</div>
+          </div>
+        </div>
+        <div class="version-model-note">Meses ou anos até a primeira release. O usuário só vê o sistema completo no final. Não há releases intermediárias — o versionamento semântico quase não é exercitado.</div>
+        <div class="version-model-stats">
+          <div class="vstat"><span class="vstat-label">Tempo até 1ª entrega</span><span class="vstat-val">Meses / anos</span></div>
+          <div class="vstat"><span class="vstat-label">Frequência de releases</span><span class="vstat-val">Uma única vez</span></div>
+          <div class="vstat"><span class="vstat-label">Participação do usuário</span><span class="vstat-val">Só no início e no fim</span></div>
+        </div>
+      </div>
+
+      <div class="version-model version-model--rad">
+        <div class="version-model-header">
+          <span class="version-model-tag">RAD</span>
+          <div class="version-model-typical">Versionamento típico: <strong>v1.0.0 → v2.0.0 → v3.0.0</strong></div>
+        </div>
+        <div class="version-timeline">
+          <div class="vtl-item">
+            <div class="vtl-phases">Design com usuário ↔ Construção rápida</div>
+            <div class="vtl-release vtl-release--major">🚀 v1.0.0 — funcionalidades essenciais</div>
+          </div>
+          <div class="vtl-item">
+            <div class="vtl-phases">Design com usuário ↔ Construção rápida</div>
+            <div class="vtl-release vtl-release--major">🚀 v2.0.0 — novas funcionalidades</div>
+          </div>
+          <div class="vtl-item">
+            <div class="vtl-phases">Design com usuário ↔ Construção rápida</div>
+            <div class="vtl-release vtl-release--major">🚀 v3.0.0 — sistema completo</div>
+          </div>
+          <div class="vtl-feedback">← Feedback do usuário entre versões</div>
+        </div>
+        <div class="version-model-note">Cada timebox (60–90 dias) entrega uma versão MAJOR. O foco é aprender com o uso entre as versões. O usuário co-projeta cada ciclo via JAD.</div>
+        <div class="version-model-stats">
+          <div class="vstat"><span class="vstat-label">Tempo até 1ª entrega</span><span class="vstat-val">60–90 dias</span></div>
+          <div class="vstat"><span class="vstat-label">Frequência de releases</span><span class="vstat-val">Por versão (v1, v2, v3…)</span></div>
+          <div class="vstat"><span class="vstat-label">Participação do usuário</span><span class="vstat-val">Entre versões (JAD)</span></div>
+        </div>
+      </div>
+
+      <div class="version-model version-model--agil">
+        <div class="version-model-header">
+          <span class="version-model-tag">RAD + Ágil</span>
+          <div class="version-model-typical">Versionamento típico: <strong>v0.1.0 → v1.0.0 → v1.1.0 → v1.1.1</strong></div>
+        </div>
+        <div class="version-timeline">
+          <div class="vtl-item vtl-item--sprint">
+            <div class="vtl-sprint-label">S1</div>
+            <div class="vtl-phases">Planning + JAD → Dev → Test → Review → Retro</div>
+            <div class="vtl-release vtl-release--minor">🚀 v0.1.0</div>
+          </div>
+          <div class="vtl-item vtl-item--sprint">
+            <div class="vtl-sprint-label">S2</div>
+            <div class="vtl-phases">Planning + JAD → Dev → Test → Review → Retro</div>
+            <div class="vtl-release vtl-release--minor">🚀 v0.2.0 <span class="vtl-patch">v0.2.1</span></div>
+          </div>
+          <div class="vtl-item vtl-item--sprint">
+            <div class="vtl-sprint-label">S5</div>
+            <div class="vtl-phases">Planning + JAD → Dev → Test → Review → Retro</div>
+            <div class="vtl-release vtl-release--mvp">🚀 v1.0.0 — MVP <span class="vtl-patch">v1.0.1</span></div>
+          </div>
+          <div class="vtl-feedback">← Novo backlog / ajustes a cada Sprint</div>
+        </div>
+        <div class="version-model-note">Minor e patch aparecem com frequência. O produto evolui em Sprints curtos (1–4 semanas). Releases contínuas e incrementais — o versionamento semântico é exercitado plenamente.</div>
+        <div class="version-model-stats">
+          <div class="vstat"><span class="vstat-label">Tempo até 1ª entrega</span><span class="vstat-val">1–4 semanas</span></div>
+          <div class="vstat"><span class="vstat-label">Frequência de releases</span><span class="vstat-val">A cada Sprint</span></div>
+          <div class="vstat"><span class="vstat-label">Participação do usuário</span><span class="vstat-val">Em cada Sprint</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section id="memes" class="section section--memes">
   <div class="container">
     <div class="section-header">
