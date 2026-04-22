@@ -640,7 +640,7 @@ if (window.innerWidth <= 768) {
   mobileNavWrapper.className = 'mobile-nav-wrapper';
   const mobileNav = document.createElement('div');
   mobileNav.className = 'mobile-nav';
-  const sections = [['hero','Início'],['models','Modelos'],['compare','Comparar'],['versioning','Versioning'],['quiz','Quiz'],['glossario','Glossário'],['memes','Memes']];
+  const sections = [['hero','Início'],['models','Modelos'],['compare','Comparar'],['versioning','Versionamento'],['quiz','Quiz'],['glossario','Glossário'],['memes','Memes']];
   sections.forEach(([id, label]) => {
     const btn = document.createElement('button');
     btn.className = 'nav-tab' + (id === 'hero' ? ' active' : '');
